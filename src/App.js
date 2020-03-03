@@ -5,7 +5,10 @@ import History from "./components/History";
 import styled from "styled-components";
 import { Router, Switch, Route, Link } from "react-router-dom";
 import ProjectDescription from "./components/ProjectDescription";
-import ContactMe from './components/ContactMe'
+import ContactMe from './components/ContactMe';
+import PotterPage from './components/PotterPage';
+
+
 
 const MyImage = styled.img`
   position: fixed;
@@ -13,14 +16,15 @@ const MyImage = styled.img`
   bottom: 0px;
   border: 1px solid;
 `;
+
 class App extends Component {
   render() {
     return (
       <Router history={History}>
         <Route path="/" exact component={Layout}></Route>
-          <Route path="/projects"
-          component={ProjectDescription}></Route>
-        <Route path='/contactme' component={ContactMe} />
+        <Route path="/projects" component={ProjectDescription}></Route>
+        <Route path='/contactMe' component={ContactMe} />
+        <Route path='/potterPage' component={PotterPage} />
       </Router>
     );
   }
