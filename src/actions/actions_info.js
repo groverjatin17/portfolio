@@ -1,8 +1,11 @@
 // This file contains actions for this project
-export const ALLALBUMS = 'ALLALBUMS'
-export const ALBUMDETAILS = 'ALBUMDETAILS'
+import {API_KEY} from '../styles/potterApiKey';
 
-// Calling an api and aving its result in a reducer
+export const ALLALBUMS = 'ALLALBUMS';
+export const ALBUMDETAILS = 'ALBUMDETAILS';
+export const POTTERCHARACTERS = 'POTTERCHARACTERS';
+
+// Calling an api and saving its result in a reducer
 export function getAlbums(){
 
   return function (dispatch){
@@ -29,6 +32,23 @@ export function getAlbumDetails(albumId){
     .then(json =>{
       dispatch({
         type:ALBUMDETAILS,
+        payload:json
+      })
+    }).catch(console.error())
+  }
+}
+
+
+export function getHarryPotterCharacters(){
+  console.log('Fetching Harry Potter Characters');
+  
+  return function (dispatch){
+    fetch(`https://www.potterapi.com/v1/characters?key=${API_KEY}`,{
+      method:'GET'})
+    .then(response => response.json())
+    .then(json =>{
+      dispatch({
+        type:POTTERCHARACTERS,
         payload:json
       })
     }).catch(console.error())
