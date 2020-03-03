@@ -1,0 +1,20 @@
+#GET https://www.potterapi.com/v1/sortingHat
+
+
+
+
+
+
+
+
+
+#GET https://www.potterapi.com/v1/characters?key=$2a$10$FAmRL8kl.Tj9hRCETvgTZepeyWrUVbeXEjfv8hkwggalFWOwsu1im
+GET https://www.potterapi.com/v1/characters/5a12298d0f5ae10021650d7f?key=$2a$10$FAmRL8kl.Tj9hRCETvgTZepeyWrUVbeXEjfv8hkwggalFWOwsu1im
+
+#GET https://www.potterapi.com/v1/houses?key=$2a$10$FAmRL8kl.Tj9hRCETvgTZepeyWrUVbeXEjfv8hkwggalFWOwsu1im
+
+#GET https://www.potterapi.com/v1/spells?key=$2a$10$FAmRL8kl.Tj9hRCETvgTZepeyWrUVbeXEjfv8hkwggalFWOwsu1im
+
+#GET https://www.potterapi.com/v1/characters?key=$2a$10$FAmRL8kl.Tj9hRCETvgTZepeyWrUVbeXEjfv8hkwggalFWOwsu1im&deathEater=true
+
+GET https://www.breakingbadapi.com/api/characters
