@@ -12,7 +12,7 @@ import {
   Card2OverlayPtag,
   BackDiv,
   FrontDiv
-} from "../styles/StyledComponents";
+} from "../styles/Project.style";
 
 // import {withRouter} from 'react-router-dom';
 import history from './History.js'
