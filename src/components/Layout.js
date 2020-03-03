@@ -3,12 +3,12 @@ import Cards from "./Cards";
 import SideProjects from "./SideProjects";
 import workformoney from '../assets/workformoney.gif'
 import SocialMedia from "./SocialMedia.js";
-
+import {connect} from 'react-redux';
 
 
 import React, { Component } from "react";
 
-export default class Layout extends Component {
+class Layout extends Component {
   render() {
     return (
       <>
@@ -31,3 +31,10 @@ export default class Layout extends Component {
     );
   }
 }
+
+const mapStateToProps = state => ({
+    reducerInfo: state.reducerInfo,
+    potterReducer: state.potterReducer
+})
+
+export default connect(mapStateToProps)(Layout);
