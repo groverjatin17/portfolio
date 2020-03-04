@@ -3,6 +3,8 @@ import {connect} from 'react-redux';
 
 import {getHarryPotterCharacters} from '../actions/actions_info';
 import PotterCharacterSearch from './PotterCharacterSearch';
+import PotterCharacterTable from './PotterCharacterTable';
+import '../styles/css/potterStyles.css';
 
 
 const PotterPrimarySection= function() {
@@ -27,17 +29,16 @@ const PotterPrimarySection= function() {
 class PotterPage extends Component {
 
     componentDidMount() {
-        console.log('Potter page mounted');
         this.props.getCharacters();
     }
 
     render() {
-        console.log('Potter Props are', this.props);
-        const {potterCharacters} = this.props.potterReducer;
         return (
             <div style={{margin: '0 50px 0 50px'}}>
-                <PotterPrimarySection />
+                <h1 className='page-title'>Harry Potter</h1>
+                {/* <PotterPrimarySection /> */}
                 <PotterCharacterSearch />
+                <PotterCharacterTable />
             </div>
         )
     }
