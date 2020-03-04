@@ -5,6 +5,11 @@ import _ from 'lodash';
 import { IoIosColorWand } from 'react-icons/io';
 
 import {TABLE_HEADER, BLOOD_TYPES} from './common/global-constants/PotterPageConstants';
+import '../styles/scss/index.scss';
+import HufflePuff from '../assets/hufflepuff.png';
+import Slytherin from '../assets/slytherin.png';
+import Gryffindor from '../assets/gryffindor.png';
+import Ravenclaw from '../assets/ravenclaw.png';
 
 const WAND_LENGTH = [',12 1/4"', ',15', ',9 1/2"', ',10 3/4']
 const WAND_TYPES =[
@@ -23,6 +28,25 @@ class PotterCharacterTable extends Component {
     renderTableRows = () => {
     const {potterCharacters} = this.props;
 
+    const renderedHouse = (house) => {
+        if (_.isUndefined(house)) {
+            console.log('undefined');
+            return null;
+            
+        }
+        switch(house.toLowerCase()) {
+            case "hufflePuff":
+                    return <img src={HufflePuff} alt='HufflePuff' className='house-image' />
+            case "slytherin":
+                    return <img src={Slytherin} alt='Slytherin' className='house-image' />
+            case "gryffindor":
+                    return <img src={Gryffindor} alt='Gryffindor' className='house-image' />
+            case "ravenclaw":
+                    return <img src={Ravenclaw} alt='Ravenclaw' className='house-image' />
+            default:
+                return null;
+    }
+}
     const tableRows = potterCharacters.length > 0 && this.props.potterCharacters
     .filter((item) => {return item.bloodStatus !== 'unknown'})
     .map((item,key) => {
@@ -31,12 +55,12 @@ class PotterCharacterTable extends Component {
         const wandType = wand ? wand : `${WAND_TYPES[_.random(0,11, false)]} ${WAND_LENGTH[_.random(0,3, false)]}`;
         const characterBoggart = boggart ? boggart : 'undisclosed';
         const characterPatronus = patronus ? patronus : 'undisclosed';
-
         return (
             <Table.Row key={_id} onClick={() => {console.log(name); }} verticalAlign='top'>
                 <Table.Cell>{key+1}</Table.Cell>
                 <Table.Cell width={3}>{name}<br /><Label as='a' image>{species}</Label></Table.Cell>
-                <Table.Cell>{house}</Table.Cell>
+                
+                <Table.Cell>{renderedHouse(house)}</Table.Cell>
                 <Table.Cell 
                     positive={bloodStatus === BLOOD_TYPES.PURE_BLOOD}
                     negative={bloodStatus === BLOOD_TYPES.MUGGLE}
@@ -61,8 +85,9 @@ class PotterCharacterTable extends Component {
     render() {
 
         return (
-            <div >
-            <Table striped selectable style={{boxShadow: '0 0 5px #d4d4d5'}}>
+            <>
+            <div className="potter-table">
+            <Table striped selectable >
                 <Table.Header>
                     <Table.Row>
                         {Object.keys(TABLE_HEADER).map((key, idx) => {
@@ -75,6 +100,7 @@ class PotterCharacterTable extends Component {
                     {this.renderTableRows()}
                 </Table.Body>
             </Table>
+            </div>
             <center>
                 <Pagination
                     defaultActivePage={1}
@@ -86,7 +112,7 @@ class PotterCharacterTable extends Component {
                     onPageChange={(_,{activePage})=> {this.setState({activePage})}}
                 />
             </center>
-        </div>
+        </>
         )
     }
 }
