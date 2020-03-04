@@ -56,7 +56,7 @@ class PotterCharacterTable extends Component {
         const characterBoggart = boggart ? boggart : 'undisclosed';
         const characterPatronus = patronus ? patronus : 'undisclosed';
         return (
-            <Table.Row key={_id} onClick={() => {console.log(name); }} verticalAlign='top'>
+            <Table.Row key={_id} onClick={() => {window.open("//" + "google.com/search?q=" + name, '_blank') }} verticalAlign='top'>
                 <Table.Cell>{key+1}</Table.Cell>
                 <Table.Cell width={3}>{name}<br /><Label as='a' image>{species}</Label></Table.Cell>
                 
@@ -87,7 +87,7 @@ class PotterCharacterTable extends Component {
         return (
             <>
             <div className="potter-table">
-            <Table striped selectable >
+            <Table selectable >
                 <Table.Header>
                     <Table.Row>
                         {Object.keys(TABLE_HEADER).map((key, idx) => {

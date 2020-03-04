@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import {withRouter} from 'react-router-dom'
 
-
+import '../styles/scss/react-transitions.scss';
 
  class ProjectDescription extends Component {
 
@@ -13,7 +13,7 @@ import {withRouter} from 'react-router-dom'
         console.log('router Items, ', this.props);
         
         return (
-            <div>
+            <div className="react-transition woah">
                 <h2>Project Name: {this.props.location.state.project.projectName}</h2>
                 <h3>Project Description:{this.props.location.state.project.projectDescription}</h3>
                 <p>main points in list</p>

@@ -1,10 +1,12 @@
-import React, { Component } from 'react'
+import React, { Component, lazy, Suspense } from 'react'
 import {connect} from 'react-redux';
 
 import {getHarryPotterCharacters} from '../actions/actions_info';
 import PotterCharacterSearch from './PotterCharacterSearch';
 import PotterCharacterTable from './PotterCharacterTable';
 import '../styles/scss/index.scss';
+
+const MyTable = lazy(() => import('./PotterCharacterTable'));
 
 const PotterPrimarySection= function() {
     return (
@@ -37,7 +39,10 @@ class PotterPage extends Component {
                 <h1 className='page-title'>Harry Potter</h1>
                 {/* <PotterPrimarySection /> */}
                 <PotterCharacterSearch />
-                <PotterCharacterTable />
+                <Suspense fallback={<h1>Its loading..........</h1>}>
+                    <MyTable />
+                </Suspense>
+                {/* <PotterCharacterTable /> */}
             </div>
         )
     }

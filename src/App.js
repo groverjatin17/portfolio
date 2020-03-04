@@ -8,7 +8,7 @@ import ProjectDescription from "./components/ProjectDescription";
 import ContactMe from './components/ContactMe';
 import PotterPage from './components/PotterPage';
 
-
+import './styles/scss/react-transitions.scss';
 
 const MyImage = styled.img`
   position: fixed;
@@ -21,10 +21,13 @@ class App extends Component {
   render() {
     return (
       <Router history={History}>
+        <div className="transition-container">
         <Route path="/" exact component={Layout}></Route>
         <Route path="/projects" component={ProjectDescription}></Route>
         <Route path='/contactMe' component={ContactMe} />
         <Route path='/potterPage' component={PotterPage} />
+        </div>
+
       </Router>
     );
   }
