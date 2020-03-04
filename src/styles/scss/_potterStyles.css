@@ -1,0 +1,17 @@
+@mixin some-message {
+    color: red;
+}
+
+.potter-route {
+    margin: 0 50px 0 50px;
+    & .page-title {
+        @include some-message;
+    }
+    & .potter-table {
+        box-shadow: 0 0 5px #d4d4d5;
+    }
+    & .house-image {
+        width: 65px;
+        height:30px;
+    }
+}
