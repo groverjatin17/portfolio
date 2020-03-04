@@ -4,8 +4,7 @@ import {connect} from 'react-redux';
 import {getHarryPotterCharacters} from '../actions/actions_info';
 import PotterCharacterSearch from './PotterCharacterSearch';
 import PotterCharacterTable from './PotterCharacterTable';
-import '../styles/css/potterStyles.css';
-
+import '../styles/scss/index.scss';
 
 const PotterPrimarySection= function() {
     return (
@@ -34,7 +33,7 @@ class PotterPage extends Component {
 
     render() {
         return (
-            <div style={{margin: '0 50px 0 50px'}}>
+            <div className='potter-route' style={{margin: '0 50px 0 50px'}}>
                 <h1 className='page-title'>Harry Potter</h1>
                 {/* <PotterPrimarySection /> */}
                 <PotterCharacterSearch />
