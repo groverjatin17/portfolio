@@ -12,10 +12,10 @@ export default class Hero extends Component {
           <ImageOverlay></ImageOverlay>
           <PortfolioLogo>Jatin Grover</PortfolioLogo>
 
-          {/* <Giphy
+          <Giphy
             src={giphy}
             alt={"Loading..."}
-          /> */}
+          />
 
           <ImageCenterDiv>
             <WelcomeMessage>

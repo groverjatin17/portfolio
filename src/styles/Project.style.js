@@ -56,68 +56,6 @@ export const CardDiv = styled.div`
   //   }
 `;
 
-export const CardHoverOverlay = styled.div`
-  & {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    // border:1px solid;
-    justify-contents: center;
-    // align-items:center;
-    text-align: center;
-  }
-  &:hover {
-    display: flex;
-    background-color: lightblue;
-    height: 100%;
-    width: 100%;
-    transition: background-color 0.5s;
-    // border:1px solid;
-    justify-contents: center;
-    // align-items:center;
-
-    // text-align:center;
-  }
-`;
-
-export const CardHoverMessage = styled.p`
-    &{
-        margin-top:25px;
-        font-family: Arial, Helvetica, sans-serif;
-        position:absolute;
-        top:44.4%;
-        opacity:0;
-        color:white;
-        font-weight:bold;
-        left:33.3%;
-        border:1px solid;
-    }
-
-
-
-    ${CardHoverOverlay}:hover &{
-        opacity:1
-        transition:opacity 0.6s
-    }
-`;
-
-export const MyIcon = styled(GiRobotAntennas)`
-&{
-    position:absolute;
-    opacity:0;
-    font-size:60px;
-    color:white;
-    top:22.2%;
-    left:40%;
-}
-
-${CardHoverOverlay}:hover &{
-    opacity:1
-    transition:opacity 0.6s
-}
-`;
-
 export const Card2OverlayDiv = styled.div`
   & {
     position: absolute;
@@ -137,7 +75,7 @@ export const Card2OverlayDiv = styled.div`
 `;
 
 export const Card2OverlayPtag = styled.p`
-  margin-top: 5px;
+  margin-top: 7px !important
   font-weight: bold;
   color: white;
 `;

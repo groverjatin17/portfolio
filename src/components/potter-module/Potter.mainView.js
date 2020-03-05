@@ -1,12 +1,12 @@
 import React, { Component, lazy, Suspense } from 'react'
 import {connect} from 'react-redux';
-import Lottie from 'react-lottie';
-import * as animationData from '../styles/animations/50-material-loader.json'
-import {getHarryPotterCharacters} from '../actions/actions_info';
+import PinkLoader from '../common/components/PinkLoader';
+
+import {getHarryPotterCharacters} from '../../actions/actions_info';
 import PotterCharacterSearch from './PotterCharacterSearch';
 import PotterCharacterDetails from './PotterCharacterDetails';
 
-import '../styles/scss/index.scss';
+import '../../styles/scss/index.scss';
 
 const PotterCharacterTable = lazy(() => import('./PotterCharacterTable'));
 
@@ -29,14 +29,6 @@ const PotterPrimarySection= function() {
     )
 }
 
-const defaultOptions = {
-    loop: true, 
-    autoplay: true, 
-    animationData: animationData.default,
-    rendererSettings: {
-        preserveAspectRatio: 'xMidYMid slice'
-      }
-}
 class PotterPage extends Component {
 
     componentDidMount() {
@@ -53,11 +45,7 @@ class PotterPage extends Component {
                 {/* Below is the example of Lazy loading. Meaning that first our PotterPage will be loaded and then PotterCharacter table will be fetched
                 while Potter page is loading. In below chances are that we will not see the fallback because browser saves in cache. But if we click "Empty cache and hard reload
                     we will see the fallback message. At the time of this comment fallback in suspense is <h1>Its loading..........</h1>" */}
-                <Suspense fallback={ <Lottie 
-                                        options={defaultOptions}
-                                        height={100}
-                                        width={100}
-                                    />}>
+                <Suspense fallback={<PinkLoader />}>
                     <PotterCharacterTable />
                 </Suspense>
             </div>

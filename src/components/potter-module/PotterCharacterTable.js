@@ -1,11 +1,11 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import { connect } from 'react-redux'
 import { Icon, Label, Table, Pagination} from 'semantic-ui-react'
 import _ from 'lodash';
 import { IoIosColorWand } from 'react-icons/io';
 
-import {TABLE_HEADER, BLOOD_TYPES, HOUSE_IMAGES, HOUSE_NAMES, } from './common/global-constants/PotterPageConstants';
-import '../styles/scss/index.scss';
+import {TABLE_HEADER, BLOOD_TYPES, HOUSE_IMAGES, HOUSE_NAMES, } from '../common/global-constants/PotterPageConstants';
+import '../../styles/scss/index.scss';
 
 const WAND_LENGTH = [',12 1/4"', ',15', ',9 1/2"', ',10 3/4']
 const WAND_TYPES =[
@@ -25,18 +25,19 @@ class PotterCharacterTable extends Component {
     const {potterCharacters} = this.props;
 
     const renderedHouse = (house) => {
+        
         if (_.isUndefined(house)) {
             return null;
         }
         switch(house.toLowerCase()) {
             case HOUSE_NAMES.HUFFLEPUFF:
-                    return <img src={HOUSE_IMAGES.HUFFLEPUFF} alt={HOUSE_IMAGES.HUFFLEPUFF} className='house-image' />
+                    return <img src={HOUSE_IMAGES.HUFFLEPUFF} alt={HOUSE_NAMES.HUFFLEPUFF} className='house-image' />
             case HOUSE_NAMES.SLYTHERIN:
-                    return <img src={HOUSE_IMAGES.SLYTHERIN} alt={HOUSE_IMAGES.SLYTHERIN} className='house-image' />
+                    return <img src={HOUSE_IMAGES.SLYTHERIN} alt={HOUSE_NAMES.SLYTHERIN} className='house-image' />
             case HOUSE_NAMES.GRYFFINDOR:
-                    return <img src={HOUSE_IMAGES.GRYFFINDOR} alt={HOUSE_IMAGES.GRYFFINDOR} className='house-image' />
+                    return <img src={HOUSE_IMAGES.GRYFFINDOR} alt={HOUSE_NAMES.GRYFFINDOR} className='house-image' />
             case HOUSE_NAMES.RAVENCLAW:
-                    return <img src={HOUSE_IMAGES.RAVENCLAW} alt={HOUSE_IMAGES.RAVENCLAW} className='house-image' />
+                    return <img src={HOUSE_IMAGES.RAVENCLAW} alt={HOUSE_NAMES.RAVENCLAW} className='house-image' />
             default:
                 return null;
     }
@@ -79,7 +80,7 @@ class PotterCharacterTable extends Component {
     render() {
 
         return (
-            <>
+            <Fragment>
             <div className="potter-table">
             <Table selectable striped>
                 <Table.Header>
@@ -106,7 +107,7 @@ class PotterCharacterTable extends Component {
                     onPageChange={(_,{activePage})=> {this.setState({activePage})}}
                 />
             </center>
-        </>
+        </Fragment>
         )
     }
 }
@@ -114,6 +115,5 @@ class PotterCharacterTable extends Component {
 const mapStateToProps = (state) => ({
     potterCharacters: state.potterReducer.potterCharacters
 })
-
 
 export default connect(mapStateToProps)(PotterCharacterTable);

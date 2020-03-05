@@ -6,7 +6,7 @@ import styled from "styled-components";
 import { Router, Switch, Route, Link } from "react-router-dom";
 import ProjectDescription from "./components/ProjectDescription";
 import ContactMe from './components/ContactMe';
-import PotterPage from './components/PotterPage';
+import PotterPage from './components/potter-module/Potter.mainView';
 
 import './styles/scss/react-transitions.scss';
 

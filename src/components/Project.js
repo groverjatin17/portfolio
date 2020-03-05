@@ -1,18 +1,14 @@
 import React, { Component } from "react";
 import {
   MyDiv,
-  Image,
   Opacity,
-  ProjectContainer,
   CardDiv,
-  CardHoverOverlay,
-  CardHoverMessage,
-  MyIcon,
   Card2OverlayDiv,
   Card2OverlayPtag,
   BackDiv,
   FrontDiv
 } from "../styles/Project.style";
+import {Reveal, Image} from 'semantic-ui-react';
 
 // import {withRouter} from 'react-router-dom';
 import history from './History.js'
@@ -20,7 +16,8 @@ import history from './History.js'
 const ImageStyle = {
   maxWidth: "100%",
   maxHeight: "100%",
-  position: "absolute"
+  position: "absolute",
+  borderRadius: '10px'
 };
 
 const openProject= (project) =>{
@@ -34,20 +31,16 @@ const openProject= (project) =>{
 
 }
 export function HoverProject(props) {
-    let value='hover value';
 
   return (
-    <CardDiv
-      onClick={()=>{openProject(props.project)}}
-    >
-      <img src={props.backgroundImage} style={ImageStyle} />
-      <CardHoverOverlay>
-        <MyIcon />
-        <CardHoverMessage>
-        {props.project.projectTitle}
-        </CardHoverMessage>
-      </CardHoverOverlay>
-    </CardDiv>
+    <Reveal animated='small fade' onClick={() => {openProject(props.project)}}>
+      <Reveal.Content visible>
+        <Image src={props.backgroundImage} style={{borderRadius: '10px'}}/>
+      </Reveal.Content>
+      <Reveal.Content hidden>
+        <div style={{width: '300px', height:'180px', backgroundColor: 'white'}}></div>
+      </Reveal.Content>
+    </Reveal>
   );
 }
 
@@ -76,8 +69,10 @@ export function RotateProject(props) {
         <img
           src={props.backgroundImage}
           alt='project description'
-          style={{ width: "300px", 
-          height:'180px'
+          style={{ 
+            width: "300px", 
+            height:'180px',
+            borderRadius: '10px'
         //   maxHeight: "100%"
         }}
         />

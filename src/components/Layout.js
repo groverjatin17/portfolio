@@ -13,6 +13,7 @@ class Layout extends Component {
     return (
       <>
         <Hero />
+        <div style={{margin: '5px 20px'}}>
         <center>
           <h1> Technical Languages</h1>
         </center>
@@ -27,6 +28,7 @@ class Layout extends Component {
           style={{ maxWidth: "500px" }}
         />
         <SocialMedia />
+        </div>
       </>
     );
   }
