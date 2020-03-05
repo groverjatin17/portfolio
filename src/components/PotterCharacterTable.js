@@ -4,12 +4,8 @@ import { Icon, Label, Table, Pagination} from 'semantic-ui-react'
 import _ from 'lodash';
 import { IoIosColorWand } from 'react-icons/io';
 
-import {TABLE_HEADER, BLOOD_TYPES} from './common/global-constants/PotterPageConstants';
+import {TABLE_HEADER, BLOOD_TYPES, HOUSE_IMAGES, HOUSE_NAMES, } from './common/global-constants/PotterPageConstants';
 import '../styles/scss/index.scss';
-import HufflePuff from '../assets/hufflepuff.png';
-import Slytherin from '../assets/slytherin.png';
-import Gryffindor from '../assets/gryffindor.png';
-import Ravenclaw from '../assets/ravenclaw.png';
 
 const WAND_LENGTH = [',12 1/4"', ',15', ',9 1/2"', ',10 3/4']
 const WAND_TYPES =[
@@ -30,19 +26,17 @@ class PotterCharacterTable extends Component {
 
     const renderedHouse = (house) => {
         if (_.isUndefined(house)) {
-            console.log('undefined');
             return null;
-            
         }
         switch(house.toLowerCase()) {
-            case "hufflePuff":
-                    return <img src={HufflePuff} alt='HufflePuff' className='house-image' />
-            case "slytherin":
-                    return <img src={Slytherin} alt='Slytherin' className='house-image' />
-            case "gryffindor":
-                    return <img src={Gryffindor} alt='Gryffindor' className='house-image' />
-            case "ravenclaw":
-                    return <img src={Ravenclaw} alt='Ravenclaw' className='house-image' />
+            case HOUSE_NAMES.HUFFLEPUFF:
+                    return <img src={HOUSE_IMAGES.HUFFLEPUFF} alt={HOUSE_IMAGES.HUFFLEPUFF} className='house-image' />
+            case HOUSE_NAMES.SLYTHERIN:
+                    return <img src={HOUSE_IMAGES.SLYTHERIN} alt={HOUSE_IMAGES.SLYTHERIN} className='house-image' />
+            case HOUSE_NAMES.GRYFFINDOR:
+                    return <img src={HOUSE_IMAGES.GRYFFINDOR} alt={HOUSE_IMAGES.GRYFFINDOR} className='house-image' />
+            case HOUSE_NAMES.RAVENCLAW:
+                    return <img src={HOUSE_IMAGES.RAVENCLAW} alt={HOUSE_IMAGES.RAVENCLAW} className='house-image' />
             default:
                 return null;
     }
@@ -56,9 +50,9 @@ class PotterCharacterTable extends Component {
         const characterBoggart = boggart ? boggart : 'undisclosed';
         const characterPatronus = patronus ? patronus : 'undisclosed';
         return (
-            <Table.Row key={_id} onClick={() => {window.open("//" + "google.com/search?q=" + name, '_blank') }} verticalAlign='top'>
+            <Table.Row key={_id} onClick={() => {window.open("//google.com/search?q=" + name, '_blank') }} verticalAlign='top'>
                 <Table.Cell>{key+1}</Table.Cell>
-                <Table.Cell width={3}>{name}<br /><Label as='a' image>{species}</Label></Table.Cell>
+                <Table.Cell width={3}><p>{name}</p><Label as='a' image>{species}</Label></Table.Cell>
                 
                 <Table.Cell>{renderedHouse(house)}</Table.Cell>
                 <Table.Cell 
@@ -71,7 +65,7 @@ class PotterCharacterTable extends Component {
                 <Table.Cell width={2}>{wandType} &nbsp;<IoIosColorWand color="blue" size="1.22345em"/></Table.Cell>
                 <Table.Cell width={2}>{characterBoggart}</Table.Cell>
                 <Table.Cell>{characterPatronus}</Table.Cell>
-                <Table.Cell positive={dumbledoresArmy} negative={deathEater}>{dumbledoresArmy ? 'Dumbledore Army' : deathEater ? 'DeathEater' : 'unknown'}</Table.Cell>
+                <Table.Cell positive={dumbledoresArmy} negative={deathEater} warning={!dumbledoresArmy && !deathEater}>{dumbledoresArmy ? 'dumbledore army' : deathEater ? 'deatheater' : 'unknown'}</Table.Cell>
             </Table.Row>
         )
     });
@@ -87,7 +81,7 @@ class PotterCharacterTable extends Component {
         return (
             <>
             <div className="potter-table">
-            <Table selectable >
+            <Table selectable striped>
                 <Table.Header>
                     <Table.Row>
                         {Object.keys(TABLE_HEADER).map((key, idx) => {
