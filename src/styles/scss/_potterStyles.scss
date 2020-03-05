@@ -1,14 +1,26 @@
-@mixin some-message {
+@mixin app-title {
     color: red;
 }
 
 .potter-route {
     margin: 0 50px 0 50px;
-    & .page-title {
-        @include some-message;
+    & .potter-title {
+        @include app-title;
     }
     & .potter-table {
         box-shadow: 0 0 5px #d4d4d5;
+        text-transform: capitalize;
+        & .ui.image.label {
+            text-transform: capitalize;
+        }
+        & p {
+            color: #787878;
+            font-family: "ITC Officina Serif";
+            font-size: 17px;
+            font-weight: 300;
+            line-height: 25px;
+            margin: 0;
+        }
     }
     & .house-image {
         width: 65px;
