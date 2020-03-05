@@ -23,28 +23,6 @@ const CardImage =styled.img`
     margin:30px;
     }
 `
-const RatingContainer=styled.div`
-    width:90%;
-    display:flex;
-    justify-content:flex-end;
-    margin:3px 5px 5px;
-`
-const GreenCell=styled.div`
-    border:1px solid ;
-    width:8px
-    height:8px; 
-    color:green;
-    background-color:green;
-    margin:2px 0px 0px 2px;
-    `
-
-const WhiteCell=styled.div`
-    border:1px solid; 
-    width:8px;
-    height:8px; 
-    color:green;
-    margin:2px 0px 0px 2px;`
-
 const Title =styled.p`
     color:grey;
     font-size:25px;
@@ -56,8 +34,5 @@ const Title =styled.p`
 export {
     Card,
     CardImage,
-    RatingContainer,
-    GreenCell,
-    WhiteCell, 
     Title
 }
