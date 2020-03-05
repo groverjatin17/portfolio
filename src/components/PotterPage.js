@@ -1,12 +1,14 @@
 import React, { Component, lazy, Suspense } from 'react'
 import {connect} from 'react-redux';
-
+import Lottie from 'react-lottie';
+import * as animationData from '../styles/animations/50-material-loader.json'
 import {getHarryPotterCharacters} from '../actions/actions_info';
 import PotterCharacterSearch from './PotterCharacterSearch';
-import PotterCharacterTable from './PotterCharacterTable';
+import PotterCharacterDetails from './PotterCharacterDetails';
+
 import '../styles/scss/index.scss';
 
-const MyTable = lazy(() => import('./PotterCharacterTable'));
+const PotterCharacterTable = lazy(() => import('./PotterCharacterTable'));
 
 const PotterPrimarySection= function() {
     return (
@@ -27,6 +29,14 @@ const PotterPrimarySection= function() {
     )
 }
 
+const defaultOptions = {
+    loop: true, 
+    autoplay: true, 
+    animationData: animationData.default,
+    rendererSettings: {
+        preserveAspectRatio: 'xMidYMid slice'
+      }
+}
 class PotterPage extends Component {
 
     componentDidMount() {
@@ -35,14 +45,21 @@ class PotterPage extends Component {
 
     render() {
         return (
-            <div className='potter-route' style={{margin: '0 50px 0 50px'}}>
-                <h1 className='page-title'>Harry Potter</h1>
+            <div className='potter-route'>
+                <h1 className='potter-title'>Harry Potter</h1>
                 {/* <PotterPrimarySection /> */}
                 <PotterCharacterSearch />
-                <Suspense fallback={<h1>Its loading..........</h1>}>
-                    <MyTable />
+                <PotterCharacterDetails />
+                {/* Below is the example of Lazy loading. Meaning that first our PotterPage will be loaded and then PotterCharacter table will be fetched
+                while Potter page is loading. In below chances are that we will not see the fallback because browser saves in cache. But if we click "Empty cache and hard reload
+                    we will see the fallback message. At the time of this comment fallback in suspense is <h1>Its loading..........</h1>" */}
+                <Suspense fallback={ <Lottie 
+                                        options={defaultOptions}
+                                        height={100}
+                                        width={100}
+                                    />}>
+                    <PotterCharacterTable />
                 </Suspense>
-                {/* <PotterCharacterTable /> */}
             </div>
         )
     }
