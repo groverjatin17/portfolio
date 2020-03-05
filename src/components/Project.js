@@ -75,9 +75,10 @@ export function RotateProject(props) {
       <FrontDiv>
         <img
           src={props.backgroundImage}
-          style={{ width: "300px", 
+          alt='project description'
+          style={{ width: "200px", 
           height:'180px'
-        //   maxHeight: "100%" 
+        //   maxHeight: "100%"
         }}
         />
       </FrontDiv>
