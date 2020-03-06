@@ -35,6 +35,7 @@ class PotterCharacterSearch extends Component {
     }
 
     render() {
+      
         if(this.props.potterCharacters.length > 0) {
             tranformedOptionSet = this.transformOptions(this.props.potterCharacters);
         }
@@ -43,10 +44,7 @@ class PotterCharacterSearch extends Component {
             options={tranformedOptionSet}
             styles={colourStyles}
             isClearable={true}
-            onChange ={(e) => {
-                    console.log('jatin', e);
-                    
-            } }
+            onChange ={this.props.handleSelectedCharacter}
           />
         )
     }
