@@ -4,7 +4,7 @@ import { Icon, Label, Table, Pagination} from 'semantic-ui-react'
 import _ from 'lodash';
 import { IoIosColorWand } from 'react-icons/io';
 
-import {TABLE_HEADER, BLOOD_TYPES, HOUSE_IMAGES, HOUSE_NAMES, } from '../common/global-constants/PotterPageConstants';
+import {TABLE_HEADER, BLOOD_TYPES, HOUSE_IMAGES, HOUSE_NAMES, } from '../common/global-constants/PotterPage.consts';
 import '../../styles/scss/index.scss';
 
 const WAND_LENGTH = [',12 1/4"', ',15', ',9 1/2"', ',10 3/4']
@@ -51,7 +51,7 @@ class PotterCharacterTable extends Component {
         const characterBoggart = boggart ? boggart : 'undisclosed';
         const characterPatronus = patronus ? patronus : 'undisclosed';
         return (
-            <Table.Row key={_id} onClick={() => {window.open("//google.com/search?q=" + name, '_blank') }} verticalAlign='top'>
+            <Table.Row key={_id} onClick={() => {window.open(`//google.com/search?q=${name}`, '_blank') }} verticalAlign='top'>
                 <Table.Cell>{key+1}</Table.Cell>
                 <Table.Cell width={3}><p>{name}</p><Label as='a' image>{species}</Label></Table.Cell>
                 
