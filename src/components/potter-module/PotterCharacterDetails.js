@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {Segment, Grid, Header} from 'semantic-ui-react';
 
-import {CHARACTER_IMAGES} from '../common/global-constants/PotterPageConstants';
+import {CHARACTER_IMAGES} from '../common/global-constants/PotterPage.consts'
 
 
 function CharacterFeature(props){
