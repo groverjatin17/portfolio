@@ -3,53 +3,50 @@ import {Segment, Grid, Header} from 'semantic-ui-react';
 
 import {CHARACTER_IMAGES} from '../common/global-constants/PotterPageConstants';
 
+
+function CharacterFeature(props){
+    let newValue = '';
+    if ( props.label === 'Order of the Phoenix') {
+        if (props.value) {
+            newValue = 'yes';
+        } else {
+            newValue = 'no';
+        }
+    } else {
+        newValue = props.value;
+    }
+    
+    return(
+        <Grid.Column >
+            <img src={props.icon} alt={props.label}  />
+            <p className='potter-heading'>{props.label}</p>
+            <p className='potter-value'>{newValue}</p>
+        </Grid.Column>
+    )
+}
+
 export default class PotterCharacterDetails extends Component {
+
     render() {
+        const {characterDetails} = this.props;
         return (
-            <div>
-                <Segment>
+                <Segment className='potter-character-details'>
                     <Grid>
                         <h1>Harry Potter</h1>
                         <p> Hogwart scholl of wizardry</p>
                         <p>Gryffindor</p>
                     <Grid.Row columns={3}>
-                        <Grid.Column >
-                            <img src={CHARACTER_IMAGES.WAND} alt='wand' style={{width: '40px', height: '40px', float: 'left'}}/>
-                            <p style={{margin:'0px 0 0 0', display: 'content', fontSize: '25px', fontWeight: 700, color: ' #e0aa40'}}>Wand</p>
-                            <p style={{marginLeft: '40px', fontSize: '17px'}}>DragonWood</p>
-                        </Grid.Column>
-                        <Grid.Column >
-                        <img src={CHARACTER_IMAGES.ORDER_OF_THE_PHOENIX} alt='wand' style={{width: '40px', height: '40px', float: 'left'}}/>
-                                <p style={{margin:'0px 0 0 0', display: 'content', fontSize: '25px', fontWeight: 700, color: ' #e0aa40'}}>Order of the Phoenix</p>
-                                <p style={{marginLeft: '40px', fontSize: '17px'}}>DragonWood</p>
-                        </Grid.Column>
-                        <Grid.Column >
-                            <img src={CHARACTER_IMAGES.BOGGART} alt='wand' style={{width: '40px', height: '40px', float: 'left'}}/>
-                            <p style={{margin:'0px 0 0 0', display: 'content', fontSize: '25px', fontWeight: 700, color: ' #e0aa40'}}>Boggart</p>
-                            <p style={{marginLeft: '40px', fontSize: '17px'}}>DragonWood</p>
-                        </Grid.Column>
+                        <CharacterFeature icon={CHARACTER_IMAGES.WAND} label='Wand' value={characterDetails && characterDetails.wand} />
+                        <CharacterFeature icon={CHARACTER_IMAGES.ORDER_OF_THE_PHOENIX} label='Order of the Phoenix' value={characterDetails && characterDetails.orderOfThePhoenix} />
+                        <CharacterFeature icon={CHARACTER_IMAGES.BOGGART} label='Boggart' value={characterDetails && characterDetails.boggart} />
                     </Grid.Row>
                     <Grid.Row columns={3} >
-                        <Grid.Column >
-                        <img src={CHARACTER_IMAGES.PATRONUS} alt='wand' style={{width: '40px', height: '40px', float: 'left'}}/>
-                            <p style={{margin:'0px 0 0 0', display: 'content', fontSize: '25px', fontWeight: 700, color: ' #e0aa40'}}>Patronus</p>
-                            <p style={{marginLeft: '40px', fontSize: '17px'}}>DragonWood</p>
-
-                        </Grid.Column>
-                        <Grid.Column >
-                        <img src={CHARACTER_IMAGES.BLOOD_TYPE} alt='wand' style={{width: '40px', height: '40px', float: 'left'}}/>
-                                <p style={{margin:'0px 0 0 0', display: 'content', fontSize: '25px', fontWeight: 700, color: ' #e0aa40'}}>Blood Type</p>
-                                <p style={{marginLeft: '40px', fontSize: '17px'}}>Pure-Blood</p>
-                        </Grid.Column>
-                        <Grid.Column >
-                        <img src={CHARACTER_IMAGES.ANIMAGUS} alt='wand' style={{width: '40px', height: '40px', float: 'left'}}/>
-                                <p style={{margin:'0px 0 0 0', display: 'content', fontSize: '25px', fontWeight: 700, color: ' #e0aa40'}}>Animagus</p>
-                                <p style={{marginLeft: '40px', fontSize: '17px'}}>DragonWood</p>
-                        </Grid.Column>
+                        <CharacterFeature icon={CHARACTER_IMAGES.PATRONUS} label='Patronus' value={characterDetails && characterDetails.patronus} />
+                        <CharacterFeature icon={CHARACTER_IMAGES.BLOOD_TYPE} label='Blood Type' value={characterDetails && characterDetails.bloodStatus} />
+                        <CharacterFeature icon={CHARACTER_IMAGES.ANIMAGUS} label='Animagus' value={characterDetails && characterDetails.animagus} />
                     </Grid.Row>
                     </Grid>
                 </Segment>
-            </div>
         )
     }
 }
