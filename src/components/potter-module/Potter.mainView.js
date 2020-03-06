@@ -31,17 +31,33 @@ const PotterPrimarySection= function() {
 
 class PotterPage extends Component {
 
+    state= {
+        characterId: '5a12292a0f5ae10021650d7e' 
+    }
     componentDidMount() {
         this.props.getCharacters();
     }
 
+
+    getSelectedCharacter = () => {
+        const {characterId} = this.state;
+        const {potterCharacters} = this.props;
+        const selectedCharacter =  potterCharacters.find(item => item._id === characterId);
+        return selectedCharacter;
+    }
+    
+    handleSelectedCharacter = (character) => {
+        this.setState({characterId: character.id})
+    }
+
     render() {
+        const characterDetails = this.getSelectedCharacter();
         return (
             <div className='potter-route'>
                 <h1 className='potter-title'>Harry Potter</h1>
-                {/* <PotterPrimarySection /> */}
-                <PotterCharacterSearch />
-                <PotterCharacterDetails />
+                <PotterPrimarySection />
+                <PotterCharacterSearch handleSelectedCharacter={this.handleSelectedCharacter}  />
+                <PotterCharacterDetails characterDetails={characterDetails}/>
                 {/* Below is the example of Lazy loading. Meaning that first our PotterPage will be loaded and then PotterCharacter table will be fetched
                 while Potter page is loading. In below chances are that we will not see the fallback because browser saves in cache. But if we click "Empty cache and hard reload
                     we will see the fallback message. At the time of this comment fallback in suspense is <h1>Its loading..........</h1>" */}
@@ -54,7 +70,7 @@ class PotterPage extends Component {
 }
 
 const mapStateToProps = state => ({
-    potterReducer: state.potterReducer
+    potterCharacters: state.potterReducer.potterCharacters
 })
 
 const mapDispatchToProps = dispatch => {
