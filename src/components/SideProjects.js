@@ -13,7 +13,8 @@ import { GiRobotAntennas, GiPerspectiveDiceFive } from "react-icons/gi";
 import { HoverProject, ButtonProject, RotateProject } from "./Project.js";
 import { ProjectContainer, Tooltip } from "../styles/Project.style";
 
-import {Communique, FailedTradeReport, Neo4j, RtController, Mt599, ELKStack, SharePointPDR, } from '../data/ProjectInfo'
+import {Communique, FailedTradeReport, Neo4j, RtController, Mt599, ELKStack, SharePointPDR, } from '../data/ProjectInfo';
+
 export default class SideProjects extends Component {
   render() {
     return (
