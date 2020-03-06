@@ -4,7 +4,7 @@ const Card =styled.div`
 &{
     box-shadow: 3px 3px 5px 1px  #888888;
     height:250px;
-    width:280px;
+    width:30%;
     display:flex;
     align-items:center;
     flex-direction:column;
