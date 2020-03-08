@@ -5,15 +5,29 @@ import workformoney from '../assets/workformoney.gif'
 import SocialMedia from "./SocialMedia.js";
 import {connect} from 'react-redux';
 
+import SideBar from './Sidebar';
+import NavigationBar from './NavigationBar';
 
 import React, { Component } from "react";
 
 class Layout extends Component {
+  state={visible: false}
+  itsVisible= () => {
+      this.setState({visible: true})
+  }
+  itsNotVisible= () => {
+    this.setState({visible: false})
+      }
+
   render() {
     return (
       <>
+      <NavigationBar />
         <Hero />
         <div style={{margin: '5px 20px'}}>
+        <button onClick={this.itsVisible} >Click Me</button>
+
+          <SideBar itsNotVisible={this.itsNotVisible} visible={this.state.visible} />
         <center>
           <h1> Technical Languages</h1>
         </center>
@@ -28,9 +42,6 @@ class Layout extends Component {
           style={{ maxWidth: "500px" }}
         />
         <SocialMedia />
-        <p> A page where we have cool css filled buttons where each performs some cool new sort of 
-          functions such as geolocation fetching, webcam activation, stripe payment etc
-        </p>
         </div>
       </>
     );
