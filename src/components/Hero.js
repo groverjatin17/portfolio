@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import giphy from "../assets/city.gif";
-import "../styles/scss/cursiveFont.scss"
+// import "../styles/scss/cursiveFont.scss"
+import "../styles/scss/index.scss"
 import {Container, ImageOverlay, Giphy, ImageCenterDiv, PortfolioLogo, WelcomeMessage} from '../styles/Hero.style'
 
 
@@ -10,8 +11,10 @@ export default class Hero extends Component {
       <>
         <Container>
           <ImageOverlay></ImageOverlay>
-          <PortfolioLogo>Jatin Grover</PortfolioLogo>
+          {/* <PortfolioLogo>Jatin Grover</PortfolioLogo> */}
 
+
+          <p className='logo'>Jatin Grover</p>
           <Giphy
             src={giphy}
             alt={"Loading..."}
