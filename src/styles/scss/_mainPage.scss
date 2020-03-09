@@ -1,9 +1,163 @@
-@import url('https://fonts.googleapis.com/css?family=Great+Vibes&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Great+Vibes|Playfair+Display|Courgette&display=swap');
+
 .logo {
     position: absolute;
     font-family: Great Vibes, cursive;
     font-size: 34px;
     top: 0px;
-    margin: 0px;
-    color: beige
+    margin-left: 10px;
+    color: beige;
+    cursor: pointer;
+}
+
+.navbar {
+    width:100%;
+    height: 46px;
+    vertical-align: middle;
+    background-color: transparent;
+    position: absolute;
+    & nav {
+        display: inline;
+        float: right;
+        height: 100%;
+    }
+
+    & ul {
+        margin-right: 10px;
+        & li {
+            display: inline;
+            padding: 10px;
+            font-weight: bold;
+            & .link {
+                color: beige;
+                font-size: medium;
+                outline: none;
+            }
+            & .link:hover {
+                opacity: 0.5;
+                border-bottom: 3px solid white;
+                padding-bottom: 4px;
+            }
+            & .link:focus {
+                border-bottom: 3px solid white;
+                padding-bottom: 4px;
+                outline: none;
+            }
+        }
+    }
+}
+
+
+.section-title {
+    display: inline-block;
+    font-family: Playfair Display, sans-serif;
+    border-bottom: 3px solid grey;
+    margin: 25px 10px 25px 15px;
+    padding: 5px
+}
+
+.footer {
+    height: 300px; 
+    width: 100%; 
+    background-color: #484848;
+    & .footer-column {
+        padding: 0;
+        margin: 0;
+        height: 100%;
+        width: 50%;
+        display: inline-block;
+        vertical-align: top;
+        & .indian-head {
+            margin: 50px 10px 50px 50px;
+            float: left;
+        }
+    }
+    & .divider {
+        border-left: 2px solid #929292;
+        height:80%;
+        display: inline-block;
+        vertical-align: top;
+        border-radius: 50%;
+        margin-top: 33px;
+    }
+    & .content {
+        width: 300px;
+        display: inline-block;
+        vertical-align: top;
+        margin: 130px 0 0 20px;
+        color: #939598;
+
+        & .social-media-icon {
+            color: beige;
+            font-size: 2em;
+            margin-right: '5px';
+        }
+        & .social-media-icon:nth-of-type(1) {
+            margin-left: 17px;
+        }
+        & .social-media-icon:hover {
+            font-size: 2.2em;
+        }
+
+        & button{
+            display: block;
+            padding: 0 15px;
+            font-family: Courgette, cursive;
+            text-transform: uppercase;
+            height: 30px;
+            letter-spacing: 1px;
+            border-radius: 5px;
+            font-weight: bold;
+            background-color: #6D6E71;
+            color: #fff;
+            outline: none;
+            border: none;
+            margin-top: 10px;
+        }
+        & button:hover {
+            background-color: #545557;
+        }
+        & button:after {
+            content: ' \02C3';
+            font-weight: bold;
+        }
+    }
+    & .tipjar {
+        opacity: 0.8;
+        width: 200px;
+        margin: 82px 10px 0 0;
+    }
+    & .tipjar:hover{
+        opacity: 1;
+    }
+
+    .termsFooter{
+        height:50px;
+        background-color: #484848;
+        border-top: 2px solid #929292;
+        width: 100%;
+        text-transform: uppercase;
+        color: #939598;
+        text-align: center;
+
+        & p {
+            line-height: 10px;
+            height:30px;
+            margin: 0px;
+            vertical-align: middle;
+            padding: 10px;
+            margin-top: 10px
+        }
+        
+        & a {
+            text-decoration: none;
+            outline: none;
+            color: inherit;
+        }
+        & a:hover {
+            color: white;
+            font-weight: bold;
+        }
+    }
+
 }
