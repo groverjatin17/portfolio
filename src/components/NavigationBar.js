@@ -1,18 +1,32 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { Component } from 'react'
-import "../styles/scss/index.scss"
+import {Link} from 'react-router-dom';
+
+import "../styles/scss/index.scss";
+let style={};
 
 export default class NavigationBar extends Component {
     render() {
-        return (
-            <div style={{width:'100%', height: '46px', verticalAlign: 'middle'}}> 
-          <p className='logo' style={{color: 'black'}}>Jatin Grover</p>
+        
+        if (this.props.theme === 'dark') {
+            style = {
+                backgroundColor: '#24292d',
+                position: 'inherit'
+            }
+        } else {
+            style= {}
+        }
 
-                <nav style={{display: 'inline', float:'right', height: '100%'}}>
+        return (
+            <div className='navbar' style={style}> 
+             <Link to="/"><p className='logo'>Jatin Grover</p></Link>
+
+                <nav>
                     <ul style={{display: 'inline-block'}}>
-                        <li style={{display: 'inline', marginRight: '10px'}}><a href='#projects'>Projects</a></li>
-                        <li style={{display: 'inline', marginRight: '10px'}}><a href='#skills'>Skills</a></li>
-                        <li style={{display: 'inline', marginRight: '10px'}} ><a href='#contactMe'>Contact Me</a></li>
-                        <li style={{display: 'inline', marginRight: '10px'}}><a href='#hp7'>HP7</a></li>
+                        <li ><Link to="/" className='link'>Projects</Link></li>
+                        <li ><Link to="/" className={'link'}>Skills</Link></li>
+                        <li ><Link to="/" className={'link'}>Contact Me</Link></li>
+                        <li ><Link to="/potterPage" className={'link'}>HP7</Link></li>
                     </ul>
                 </nav>
             </div>
