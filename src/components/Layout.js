@@ -5,43 +5,25 @@ import workformoney from '../assets/workformoney.gif'
 import SocialMedia from "./SocialMedia.js";
 import {connect} from 'react-redux';
 
-import SideBar from './Sidebar';
-import NavigationBar from './NavigationBar';
-
 import React, { Component } from "react";
 
 class Layout extends Component {
-  state={visible: false}
-  itsVisible= () => {
-      this.setState({visible: true})
-  }
-  itsNotVisible= () => {
-    this.setState({visible: false})
-      }
 
   render() {
     return (
       <>
-      <NavigationBar />
         <Hero />
         <div style={{margin: '5px 20px'}}>
-        <button onClick={this.itsVisible} >Click Me</button>
-
-          <SideBar itsNotVisible={this.itsNotVisible} visible={this.state.visible} />
-        <center>
-          <h1> Technical Languages</h1>
-        </center>
-        <Cards />
-        <center>
-          <h1> Projects</h1>
-        </center>
-        <SideProjects />
-        <img
-          src={workformoney}
-          alt="Loading..."
-          style={{ maxWidth: "500px" }}
-        />
-        <SocialMedia />
+          <h1 className='section-title'>Technical Languages</h1>
+          <Cards />
+          <h1 className='section-title'>Projects</h1>
+          <SideProjects />
+          <img
+            src={workformoney}
+            alt="Loading..."
+            style={{ maxWidth: "500px" }}
+          />
+          <SocialMedia />
         </div>
       </>
     );
