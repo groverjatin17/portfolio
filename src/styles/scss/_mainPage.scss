@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Great+Vibes|Playfair+Display|Courgette&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Great+Vibes|Raleway:300,400,600|Courgette&display=swap');
 
 .logo {
     position: absolute;
@@ -47,11 +47,16 @@
     }
 }
 
+.ui.horizontal.divider:before,
+.ui.horizontal.divider:after {
+    background-size: 5rem 0.14rem;  
+    margin: 25px 0;      
+}
 
 .section-title {
     display: inline-block;
-    font-family: Playfair Display, sans-serif;
-    border-bottom: 3px solid grey;
+    font-family:Raleway, sans-serif;
+    // border-bottom: 3px solid grey;
     margin: 25px 10px 25px 15px;
     padding: 5px
 }

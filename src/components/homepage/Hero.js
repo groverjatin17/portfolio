@@ -1,11 +1,9 @@
 import React, { Component } from "react";
-import giphy from "../assets/city.gif";
-import "../styles/scss/index.scss"
-import {Container, ImageOverlay, Giphy, Button, ImageCenterDiv, WelcomeMessage} from '../styles/Hero.style'
+import giphy from "../../assets/city.gif";
+import "../../styles/scss/index.scss";
+import {Container, ImageOverlay, Giphy, Button, ImageCenterDiv, WelcomeMessage} from '../../styles/Hero.style'
 
-import NavigationBar from './NavigationBar';
-
-import '../styles/scss/index.scss';
+import NavigationBar from '../NavigationBar';
 
 export default class Hero extends Component {
   render() {
@@ -27,7 +25,7 @@ export default class Hero extends Component {
               I build interactive Websites
             </WelcomeMessage>
           </ImageCenterDiv>
-          <Button onClick={() => {console.log('My Projects');}}>View Projects</Button>
+          <Button onClick={this.props.scrollIntoView}>View Projects</Button>
         </Container>
       </>
     );

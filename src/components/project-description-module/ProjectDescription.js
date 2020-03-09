@@ -1,13 +1,9 @@
 import React, { Component } from 'react'
 import {withRouter} from 'react-router-dom'
 
-import '../styles/scss/react-transitions.scss';
+import '../../styles/scss/react-transitions.scss';
 
  class ProjectDescription extends Component {
-
-    constructor(props){
-        super(props);
-    }
 
     render() {
         console.log('router Items, ', this.props);

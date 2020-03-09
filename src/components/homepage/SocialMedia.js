@@ -4,10 +4,10 @@ import { TiSocialGithub } from "react-icons/ti";
 import { TiSocialLinkedin } from "react-icons/ti";
 import { TiSocialTwitter } from "react-icons/ti";
 
-import TipJar from '../assets/tip-jar.png'
-import IndianHead from './common/components/IndianHead';
+import TipJar from '../../assets/tip-jar.png'
+import IndianHead from '../common/components/IndianHead';
 
-import '../styles/scss/index.scss';
+import '../../styles/scss/index.scss';
 
 export default class SocialMedia extends Component {
   render() {

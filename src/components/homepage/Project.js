@@ -7,11 +7,11 @@ import {
   Card2OverlayPtag,
   BackDiv,
   FrontDiv
-} from "../styles/Project.style";
+} from "../../styles/Project.style";
 import {Reveal, Image} from 'semantic-ui-react';
 
 // import {withRouter} from 'react-router-dom';
-import history from './History.js'
+import history from '../History.js'
 
 const ImageStyle = {
   maxWidth: "100%",

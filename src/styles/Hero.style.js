@@ -41,6 +41,13 @@ cursor: pointer;
 position: absolute;
 left: 45%;
 bottom: 45%;
+
+&:hover {
+  color: white;
+  background-color: sandybrown;
+  border: 1px solid white;
+
+}
 `;
 
 const WelcomeMessage = styled.p`

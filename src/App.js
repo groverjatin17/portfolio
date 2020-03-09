@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import Layout from "./components/Layout";
+import Layout from "./components/homepage/Layout";
 import History from "./components/History";
 import { Router, Route } from "react-router-dom";
-import ProjectDescription from "./components/ProjectDescription";
+import ProjectDescription from "./components/project-description-module/ProjectDescription";
 import ContactMe from './components/ContactMe';
 import PotterPage from './components/potter-module/Potter.mainView';
 

@@ -1,5 +1,5 @@
 import React from 'react'
-import {Card, CardImage, Title} from '../styles/Card.style';
+import {Card, CardImage, Title} from '../../styles/Card.style';
 import {Rating} from 'semantic-ui-react';
 
 const CardMaker =({rating, image, title}) =>{
