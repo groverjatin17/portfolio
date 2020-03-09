@@ -1,11 +1,11 @@
 import React, { Component, lazy, Suspense } from 'react'
 import {connect} from 'react-redux';
-import PinkLoader from '../common/components/PinkLoader';
 
+import PinkLoader from '../common/components/PinkLoader';
+import NavigationBar from '../NavigationBar';
 import {getHarryPotterCharacters} from '../../actions/actions_info';
 import PotterCharacterSearch from './PotterCharacterSearch';
 import PotterCharacterDetails from './PotterCharacterDetails';
-
 import '../../styles/scss/index.scss';
 
 const PotterCharacterTable = lazy(() => import('./PotterCharacterTable'));
@@ -53,7 +53,10 @@ class PotterPage extends Component {
     render() {
         const characterDetails = this.getSelectedCharacter();
         return (
+            <>
+            <NavigationBar theme= 'dark' />
             <div className='potter-route'>
+
                 <h1 className='potter-title'>Harry Potter</h1>
                 <PotterPrimarySection />
                 <PotterCharacterSearch handleSelectedCharacter={this.handleSelectedCharacter}  />
@@ -65,6 +68,7 @@ class PotterPage extends Component {
                     <PotterCharacterTable />
                 </Suspense>
             </div>
+            </>
         )
     }
 }
