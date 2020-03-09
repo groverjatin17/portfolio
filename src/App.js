@@ -2,32 +2,25 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import Layout from "./components/Layout";
 import History from "./components/History";
-import styled from "styled-components";
-import { Router, Switch, Route, Link } from "react-router-dom";
+import { Router, Route } from "react-router-dom";
 import ProjectDescription from "./components/ProjectDescription";
 import ContactMe from './components/ContactMe';
 import PotterPage from './components/potter-module/Potter.mainView';
 
+
 import './styles/scss/react-transitions.scss';
 
-const MyImage = styled.img`
-  position: fixed;
-  right: 0px;
-  bottom: 0px;
-  border: 1px solid;
-`;
-
 class App extends Component {
+
   render() {
     return (
       <Router history={History}>
         <div className="transition-container">
-        <Route path="/" exact component={Layout}></Route>
+        <Route exact path="/" component={Layout}/>
         <Route path="/projects" component={ProjectDescription}></Route>
         <Route path='/contactMe' component={ContactMe} />
         <Route path='/potterPage' component={PotterPage} />
         </div>
-
       </Router>
     );
   }
