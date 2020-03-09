@@ -26,21 +26,27 @@ const ImageCenterDiv = styled.div`
   margin-left: -300px;
   margin-top: -120px;
   // border: 5px solid black;
-` 
+` ;
 
-const PortfolioLogo = styled.p`
-  position: absolute;
-  font-family: Cedarville Cursive, cursive;
-  font-size: 50px;
-  top: 0px;
-  margin: 0px;
+const Button = styled.button`
+padding: 10px;
+letter-spacing: 1px;
+background: transparent;
+border: 1px solid lightsalmon;
+border-radius: 15px;
+outline: none;
+font-weight: 600;
+color: sandybrown;
+cursor: pointer;
+position: absolute;
+left: 45%;
+bottom: 45%;
 `;
 
 const WelcomeMessage = styled.p`
-  // font-family: Arial, Helvetica sans-serif;
   color: white;
   font-weight:bold;
   font-size:40px
 `;
 
-export {Container, ImageOverlay, Giphy, ImageCenterDiv, PortfolioLogo, WelcomeMessage}
+export {Container, ImageOverlay, Giphy, Button, ImageCenterDiv, WelcomeMessage}
