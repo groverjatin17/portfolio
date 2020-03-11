@@ -1,3 +1,5 @@
+https://www.rentomojo.com/verifyCompanyEmail/d97ae78a1395f5963792d4d1d3b15a23?cartRedirect=false
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
