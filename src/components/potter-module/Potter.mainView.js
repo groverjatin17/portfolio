@@ -4,6 +4,7 @@ import {connect} from 'react-redux';
 import PinkLoader from '../common/components/PinkLoader';
 import NavigationBar from '../NavigationBar';
 import {getHarryPotterCharacters} from '../../actions/actions_info';
+import {getRandomTechImage} from '../../actions/actions_info';
 import PotterCharacterSearch from './PotterCharacterSearch';
 import PotterCharacterDetails from './PotterCharacterDetails';
 import '../../styles/scss/index.scss';
@@ -28,14 +29,15 @@ const PotterPrimarySection= function() {
         </div>
     )
 }
-
 class PotterPage extends Component {
 
     state= {
         characterId: '5a12292a0f5ae10021650d7e' 
     }
+
     componentDidMount() {
         this.props.getCharacters();
+        this.props.getImage();
     }
 
 
@@ -51,6 +53,8 @@ class PotterPage extends Component {
     }
 
     render() {
+        console.log('potter props', this.props);
+        
         const characterDetails = this.getSelectedCharacter();
         return (
             <>
@@ -74,12 +78,14 @@ class PotterPage extends Component {
 }
 
 const mapStateToProps = state => ({
-    potterCharacters: state.potterReducer.potterCharacters
+    potterCharacters: state.potterReducer.potterCharacters,
+    projectReducer: state.projectReducer
 })
 
 const mapDispatchToProps = dispatch => {
     return {
-        getCharacters: () => dispatch(getHarryPotterCharacters())
+        getCharacters: () => dispatch(getHarryPotterCharacters()),
+        getImage: () => dispatch(getRandomTechImage())
     }
   }
 

@@ -9,7 +9,7 @@
 
 
 #GET https://www.potterapi.com/v1/characters?key=$2a$10$FAmRL8kl.Tj9hRCETvgTZepeyWrUVbeXEjfv8hkwggalFWOwsu1im
-GET https://www.potterapi.com/v1/characters/5a12298d0f5ae10021650d7f?key=$2a$10$FAmRL8kl.Tj9hRCETvgTZepeyWrUVbeXEjfv8hkwggalFWOwsu1im
+#GET https://www.potterapi.com/v1/characters/5a12298d0f5ae10021650d7f?key=$2a$10$FAmRL8kl.Tj9hRCETvgTZepeyWrUVbeXEjfv8hkwggalFWOwsu1im
 
 #GET https://www.potterapi.com/v1/houses?key=$2a$10$FAmRL8kl.Tj9hRCETvgTZepeyWrUVbeXEjfv8hkwggalFWOwsu1im
 
@@ -17,4 +17,12 @@ GET https://www.potterapi.com/v1/characters/5a12298d0f5ae10021650d7f?key=$2a$10$
 
 #GET https://www.potterapi.com/v1/characters?key=$2a$10$FAmRL8kl.Tj9hRCETvgTZepeyWrUVbeXEjfv8hkwggalFWOwsu1im&deathEater=true
 
-GET https://www.breakingbadapi.com/api/characters
+#GET https://www.breakingbadapi.com/api/characters
+
+
+#POST https://developers.zomato.com/api/v2.1/search?entity_id=5&entity_type=city&q=global%20punjab
+#content-type: application/json
+#user-key: d597c83e846626cb8f8479334055fba9
+
+
+GET https://api.unsplash.com/photos/random?client_id=DZtGI3mwqNRVryoipusIJD_fYr1453aSYEOWI3r8RpU&collections=335434
