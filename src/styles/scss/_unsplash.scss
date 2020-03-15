@@ -1,0 +1,118 @@
+.unsplash-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.unsplash-img {
+    position: relative;
+    display: inline-block;
+    width: 30%;
+    height: 200px;
+    margin: 10px;
+
+    & img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.overlay {
+    display: none;
+}
+.unsplash-img:hover .overlay {
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,.2);
+    position:absolute;
+    top:0;
+    left:0;
+    display:inline-block;
+
+    & p {
+        position: absolute;
+        bottom: 4px;
+        left: 10px;
+        font-size: 13px;
+        color: white;
+    }
+
+    & .download {
+        position: absolute;
+        bottom: 14px;
+        right: 10px;
+    }
+
+    & a {
+        color: black;
+    }
+}
+
+.unsplash-form {
+    width: 20%;
+    position: relative;
+    height: 50px;
+    overflow: hidden;
+    display: inline-block;
+
+    & input {
+        width: 100%;
+        height: 100%;
+        color: #595f6e;
+        padding-top: 20px;
+        border:none;
+        outline: none;
+    }
+
+    & label {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        border-bottom: 1px solid black;
+    }
+
+    & label::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -1px;
+        width: 100%;
+        height: 100%;
+        border-bottom: 3px solid #5fa8d3;
+        transform: translateX(-100%);
+        transition: all 0.3s ease;
+    }
+
+    & .content-name{
+        position: absolute;
+        bottom: 5px;
+        left: 0;
+        transition: all 0.3s ease;
+    }
+
+    & input:focus + .label-name .content-name,
+    & input:valid + .label-name .content-name
+    {
+        transform: translateY(-150%);
+        font-size: 14px;
+        color:  #5fa8d3;
+    }
+
+    & input:focus + .label-name::after,
+    & input:valid + .label-name::after
+     {
+        transform: translateX(0%);
+        transition: transform 0.3s ease;
+    }
+
+    // & input:valid + .label-name .content-name {
+    //     transform: translateY(-150%);
+    //     font-size: 14px;
+    //     // color:  #5fa8d3; 
+    //    }
+
+
+}

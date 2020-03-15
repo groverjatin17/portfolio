@@ -6,6 +6,7 @@ import { Router, Route } from "react-router-dom";
 import ProjectDescription from "./components/project-description-module/ProjectDescription";
 import ContactMe from './components/ContactMe';
 import PotterPage from './components/potter-module/Potter.mainView';
+import Unsplash from './components/unsplash-images/Unsplash.mainView';
 
 
 import './styles/scss/react-transitions.scss';
@@ -20,6 +21,7 @@ class App extends Component {
         <Route path="/projects" component={ProjectDescription}></Route>
         <Route path='/contactMe' component={ContactMe} />
         <Route path='/potterPage' component={PotterPage} />
+        <Route path='/images' component={Unsplash} />
         </div>
       </Router>
     );

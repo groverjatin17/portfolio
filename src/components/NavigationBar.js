@@ -24,7 +24,7 @@ export default class NavigationBar extends Component {
                 <nav>
                     <ul style={{display: 'inline-block'}}>
                         <li ><Link to="/" className='link'>Projects</Link></li>
-                        <li ><Link to="/" className={'link'}>Skills</Link></li>
+                        <li ><Link to="/images" className={'link'}>Images</Link></li>
                         <li ><Link to="/" className={'link'}>Contact Me</Link></li>
                         <li ><Link to="/potterPage" className={'link'}>HP7</Link></li>
                     </ul>
