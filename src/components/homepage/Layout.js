@@ -42,9 +42,9 @@ scrollToTitleRef = () => this.titleRef.current.scrollIntoView({ behavior: 'smoot
   }
 }
 
-const mapStateToProps = state => ({
-    reducerInfo: state.reducerInfo,
-    potterReducer: state.potterReducer
+const mapStateToProps = ({reducerInfo, potterReducer}) => ({
+    reducerInfo: reducerInfo,
+    potterReducer: potterReducer
 })
 
 export default connect(mapStateToProps)(Layout);

@@ -1,36 +1,6 @@
 @import './_potterStyles.scss';
 @import './_rippleButton.scss';
 @import './_unsplash.scss';
-@import './mainPage.scss';
-
-
-.top-panel::before{
-    content: '╲╱';
-    color: #fff;
-    position: absolute;
-    opacity: 0.8;
-    text-shadow: 0 0 .5rem rgba(0,0,0,0.5);
-    width: 6rem;
-    font-size: 2rem;
-    height: 4rem;
-    line-height: 4rem;
-    text-align: center;
-    bottom: 2rem;
-    margin-left: -3rem;
-    left: 50%;
-    animation: bounce 1s ease infinite;
-  }
-  
-  @keyframes bounce {
-    50% {
-      transform: translateY(-50%);
-    }
-    100% {
-      transform: translateY(0);
-    }
-  }
-  
-  
-  .top-panel {
-    position: relative;
-  }
+@import './_mainPage.scss';
+@import './_projectDescription.scss';
+@import './_hero.scss';

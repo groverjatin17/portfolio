@@ -68,6 +68,6 @@ export const SharePointPDR = {
     projectPoints: [
         'Developed a Tool using Python script for PMs to rectify any missing documents in various Projects before Auditing.',
         'The tool parses through all the directories and subdirectories of a Project on SharePoint using Client-side API’s and create a consolidated view of all the documents that are present or missing in the project. Then the report is automatically mailed to individual user for rectification.',
-        'This effort    helped secure all mandatory documents before final Auditing review.'
+        'This effort helped secure all mandatory documents before final Auditing review.'
         ]
 }

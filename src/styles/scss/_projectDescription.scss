@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css?family=Great+Vibes|Raleway:300,400,600|Courgette&display=swap');
+
+.project-container {
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+
+    & .project-desc {
+        height:100%;
+        width: 100%;
+        margin-left: 10px;
+        padding: 25px;
+    }
+
+    & h2 {
+        margin: 0px 0 10px 0;
+    }
+
+    & h3 {
+        margin: 0 0 10px 0;
+    }
+
+    & ul {
+        list-style-type: none;
+    }
+    & li {
+        position: relative;
+        padding-left: 0.4em;
+        margin: 0 0 20px 0;
+    }
+    & li:before {
+        content: '\2756';
+        position: absolute;
+        left: -1em;
+        }
+}
+
+
+
+

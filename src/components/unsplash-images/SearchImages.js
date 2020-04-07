@@ -7,6 +7,8 @@ function SearchImage(props) {
 
     const [query, setQuery] = useState('pen');
     const {searchedImages} = props;
+
+    
     const renderImages = () => {
         if(_.isEmpty(searchedImages)) {
         } else {

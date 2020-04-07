@@ -6,20 +6,27 @@ import _ from 'lodash';
 
 import {getImagesOnSearch, saveSearchQuery, getRandomImage} from '../../actions/actions_info';
 import SearchImages from './SearchImages';
+import RandomWallpaper from './RandomWallpaper';
 import PinkLoader from '../common/components/PinkLoader';
+import NavigationBar from '../NavigationBar';
 
 function UnsplashMainView(props) {
   
     const {searchQuery, searchedImages, randomImage, saveSearch} = props;
 
     useEffect(() => {
-        props.fetchImages(searchQuery, 1)
-    }, [props.searchQuery])
+        props.fetchImages(searchQuery, 1);
+    }, [searchQuery])
     
-    let randomImageUrl = '';
+    let randomImageObject = {};
     if(_.isEmpty(randomImage)) {
     } else {
-        randomImageUrl = randomImage.urls.regular;
+        randomImageObject.imageUrl = randomImage.urls.regular;
+        randomImageObject.imageId = randomImage.id;
+        randomImageObject.title = randomImage.description;
+        randomImageObject.photographer = randomImage.user.name;
+        randomImageObject.views = randomImage.views;
+        randomImageObject.downloads = randomImage.downloads;
     }
     
     const handleTabChange = (e, {activeIndex}) => {
@@ -28,37 +35,42 @@ function UnsplashMainView(props) {
     }
     }
 
-      const panes = [
-        {
-          menuItem: { key: 'searchImage', icon: 'images outline', content: 'Search Images' },
-          render: () => (<Tab.Pane>
-                            <SearchImages 
-                                searchedImages={searchedImages} 
-                                saveSearch={saveSearch}
-                            />
-                        </Tab.Pane>)
-        },
-        {
-          menuItem: { key: 'RandomWallpaper', icon: 'file image', content: 'My  Next Wallpaper' },
-          render: () => <Tab.Pane>
-                            { _.isEmpty(randomImage) ? <PinkLoader /> : <img src={randomImageUrl} alt='background' /> }
-                        </Tab.Pane>
-        },
-      ]
+    const panes = [
+    {
+        menuItem: { key: 'searchImage', icon: 'images outline', content: 'Search Images' },
+        render: () => (<Tab.Pane>
+                        <SearchImages 
+                            searchedImages={searchedImages} 
+                            saveSearch={saveSearch}
+                        />
+                    </Tab.Pane>)
+    },
+    {
+        menuItem: { key: 'RandomWallpaper', icon: 'file image', content: 'My  Next Wallpaper' },
+        render: () => <Tab.Pane>
+                        { _.isEmpty(randomImage) ? 
+                        <PinkLoader /> : 
+                        <RandomWallpaper randomImageObject={randomImageObject} />
+                        }
+                    </Tab.Pane>
+    },
+    ]
 
     return (
         <div>
+            <NavigationBar theme= 'dark' />
+            <br />
             <Tab panes={panes} 
-            onTabChange={handleTabChange} 
+            onTabChange={handleTabChange}
             />
         </div>
     )
 }
 
-const mapStateToProps = state => ({
-    searchedImages: state.unsplashReducer.searchedImages,
-    searchQuery: state.unsplashReducer.searchQuery,
-    randomImage: state.unsplashReducer.randomImage
+const mapStateToProps = ({unsplashReducer}) => ({
+    searchedImages: unsplashReducer.searchedImages,
+    searchQuery: unsplashReducer.searchQuery,
+    randomImage: unsplashReducer.randomImage
 })
 
 const mapDispatchToProps = dispatch => {

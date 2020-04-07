@@ -20,6 +20,7 @@
 .overlay {
     display: none;
 }
+
 .unsplash-img:hover .overlay {
     width:100%;
     height:100%;
@@ -107,12 +108,36 @@
         transform: translateX(0%);
         transition: transform 0.3s ease;
     }
+}
 
-    // & input:valid + .label-name .content-name {
-    //     transform: translateY(-150%);
-    //     font-size: 14px;
-    //     // color:  #5fa8d3; 
-    //    }
+.unsplash-random {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 
+    & .unsplash-wallpaper {
+        width: 90%;
+        height: 90vh;
+        position: relative;
+        background-size: cover;
+    }
+    & .unsplash-overlay {
+        display: none;
+    }
+    & .unsplash-wallpaper:hover .unsplash-overlay {
+        display: flex;
+        width: 100%;
+        height: 90vh;
+        position: absolute;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background:rgba(0,0,0,.2);
+        
+        & p a{
+            font-size: 13px;
+            color: white;
+        }
+    }
 
 }
