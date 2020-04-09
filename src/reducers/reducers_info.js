@@ -1,25 +1,17 @@
-import {ALLALBUMS} from '../actions/actions_info.js'
-import {ALBUMDETAILS} from '../actions/actions_info.js'
-
+import {LOCALE} from '../actions/actions_info.js';
 
 const initialState = {
-  allAlbums:[],
+  locale:'en-US',
   albumDetails:[]
 }
 
 export default function(state = initialState, action){
   switch (action.type) {
-    case ALLALBUMS:
+    case LOCALE:
       return{
         ...state,
-        allAlbums:action.payload
+      locale:action.payload
       };
-    case ALBUMDETAILS:
-      return{
-        ...state,
-        albumDetails:action.payload
-      };
-
     default:
       return state
   }

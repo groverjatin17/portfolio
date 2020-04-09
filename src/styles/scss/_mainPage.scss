@@ -16,14 +16,16 @@
     vertical-align: middle;
     background-color: transparent;
     position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 7px 0 0 0;
     & nav {
         display: inline;
-        float: right;
-        height: 100%;
     }
 
     & ul {
-        margin-right: 10px;
+        margin: 0 10px 0 0;
         & li {
             display: inline;
             padding: 10px;

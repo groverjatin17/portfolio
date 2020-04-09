@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import {FormattedMessage} from 'react-intl';
 import _ from 'lodash'
 import {FiDownload} from 'react-icons/fi'
 import RippleButton from '../common/components/RippleButton';
@@ -37,11 +38,18 @@ function SearchImage(props) {
             <div className='unsplash-form'  >
                 <input type="text" name='name' autoComplete='off' required onChange={(e) => {setQuery(e.target.value); }} />
                 <label htmlFor='name' className='label-name'>
-                    <span className='content-name'>Search</span>
+                    <span className='content-name'>
+                        <FormattedMessage
+                            id='images.search'
+                            defaultMessage='search'
+                        /> </span>
                 </label>
             </div>
             <RippleButton onClick={() => props.saveSearch(query)}>
-                Search
+                <FormattedMessage
+                    id='images.search'
+                    defaultMessage='search'
+                />
             </RippleButton>
 
             <div className='unsplash-container'>

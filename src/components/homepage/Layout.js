@@ -1,5 +1,7 @@
 import React, { Component, createRef } from "react";
+import {FormattedMessage} from 'react-intl';
 import {Divider} from 'semantic-ui-react';
+
 import Hero from "./Hero";
 import Cards from "./Cards";
 import SideProjects from "./SideProjects";
@@ -23,11 +25,21 @@ scrollToTitleRef = () => this.titleRef.current.scrollIntoView({ behavior: 'smoot
         <Hero scrollIntoView={this.scrollToTitleRef} />
         <div style={{margin: '5px 20px'}}>
             <Divider horizontal style={{margin: '30px 0px 10px 0'}}>
-              <h1 className='section-title'>Tech Stack</h1>
+              <h1 className='section-title'>
+                <FormattedMessage 
+                  id='heading.techStack'
+                  defaultMessage= 'Tech Stack'
+                />
+              </h1>
             </Divider>
           <Cards />
             <Divider horizontal style={{margin: '30px 0px 10px 0'}}>
-              <h1 className='section-title' ref={this.titleRef}>Projects</h1>
+              <h1 className='section-title' ref={this.titleRef}>
+                <FormattedMessage 
+                  id='heading.myProjects'
+                  defaultMessage= 'My Projects'
+                />
+              </h1>
             </Divider>
           <SideProjects />
           <img

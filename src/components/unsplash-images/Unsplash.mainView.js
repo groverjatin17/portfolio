@@ -1,6 +1,8 @@
 import React, {useEffect} from 'react'
 import {withRouter} from 'react-router-dom'
 import {connect} from 'react-redux';
+import {FormattedMessage} from 'react-intl';
+
 import {Tab} from 'semantic-ui-react';
 import _ from 'lodash';
 
@@ -37,7 +39,13 @@ function UnsplashMainView(props) {
 
     const panes = [
     {
-        menuItem: { key: 'searchImage', icon: 'images outline', content: 'Search Images' },
+        menuItem: { key: 'searchImage', 
+                    icon: 'images outline', 
+                    content: <FormattedMessage
+                                id='images.searchImages'
+                                defaultMessage='Search Images'
+                            /> 
+},
         render: () => (<Tab.Pane>
                         <SearchImages 
                             searchedImages={searchedImages} 
@@ -46,7 +54,13 @@ function UnsplashMainView(props) {
                     </Tab.Pane>)
     },
     {
-        menuItem: { key: 'RandomWallpaper', icon: 'file image', content: 'My  Next Wallpaper' },
+        menuItem: { key: 'RandomWallpaper', 
+                    icon: 'file image', 
+                    content: <FormattedMessage
+                                id='images.myNextWallpaper'
+                                defaultMessage='My Next Wallpaper'
+                            /> 
+                },
         render: () => <Tab.Pane>
                         { _.isEmpty(randomImage) ? 
                         <PinkLoader /> : 

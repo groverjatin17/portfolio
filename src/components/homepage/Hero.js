@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import {FormattedMessage} from 'react-intl';
+
 import giphy from "../../assets/city.gif";
 import "../../styles/scss/index.scss";
 import {Container, ImageOverlay, Giphy, Button, ImageCenterDiv, WelcomeMessage} from '../../styles/Hero.style'
@@ -20,12 +22,23 @@ export default class Hero extends Component {
           />
           <ImageCenterDiv>
             <WelcomeMessage>
-              Hi, I am Jatin. I am a Web Developer.
+              <FormattedMessage 
+                id='hero.description1'
+                defaultMessage= 'Hi, I am Jatin. I am a Web Developer.'
+              />
               <br/>
-              I build interactive Websites
+              <FormattedMessage 
+                id='hero.description2'
+                defaultMessage= 'I build interactive Websites'
+              />
             </WelcomeMessage>
           </ImageCenterDiv>
-          <Button onClick={this.props.scrollIntoView}>View Projects</Button>
+          <Button onClick={this.props.scrollIntoView}>
+            <FormattedMessage 
+                id='hero.viewProjects'
+                defaultMessage= 'View projects'
+            />
+          </Button>
         </Container>
       </>
     );

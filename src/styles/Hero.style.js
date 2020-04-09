@@ -40,7 +40,7 @@ color: sandybrown;
 cursor: pointer;
 position: absolute;
 left: 45%;
-bottom: 45%;
+bottom: 41%;
 
 &:hover {
   color: white;

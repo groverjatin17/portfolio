@@ -1,0 +1,19 @@
+{
+    "navbar.images": "Images",
+    "navbar.contactMe": "Contact Me",
+    "navbar.harryPotter": "HP7",
+    "navbar.language": "Language",
+    "hero.description1": "Hi, I am Jatin. I am a Web Developer.",
+    "hero.description2": "I build interactive Websites",
+    "hero.viewProjects": "View Projects",
+    "heading.techStack": "Tech Stack",
+    "heading.myProjects": "My Projects",
+    "footer.getInTouch": "Get in touch with the creator",
+    "footer.donateDesc": "It took hours and hours to build this website. Wanna be a patron?",
+    "footer.donateButton": "DONATE",
+    "footer.privacyPolicy": "PRIVACY POLICY",
+    "footer.termsOfService": "TERMS OF SERVICE",
+    "images.searchImages": "Search images",
+    "images.myNextWallpaper": "My Next Wallpaper",
+    "images.search": "Search"
+}
