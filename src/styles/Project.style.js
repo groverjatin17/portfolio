@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { GiRobotAntennas, GiPerspectiveDiceFive } from "react-icons/gi";
 
 export const MyDiv = styled.div`
   position: relative;

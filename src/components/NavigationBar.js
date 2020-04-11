@@ -24,8 +24,6 @@ class NavigationBar extends Component {
             style= {}
         }
 
-        console.log(this.props);
-        
         return (
             <div className='navbar' style={style}>
                 <Link to="/">
@@ -72,7 +70,7 @@ class NavigationBar extends Component {
                                     id="navbar.language" 
                                     defaultMessage="Language"
                                 />}
-                            onChange={(e, data)=>{this.props.setLocale(data.value); console.log(this.props);
+                            onChange={(e, data)=>{this.props.setLocale(data.value);
                             }}
                         />
                         

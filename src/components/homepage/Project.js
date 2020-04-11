@@ -1,7 +1,5 @@
-import React, { Component } from "react";
+import React from "react";
 import {
-  MyDiv,
-  Opacity,
   CardDiv,
   Card2OverlayDiv,
   Card2OverlayPtag,
@@ -10,7 +8,6 @@ import {
 } from "../../styles/Project.style";
 import {Reveal, Image} from 'semantic-ui-react';
 
-// import {withRouter} from 'react-router-dom';
 import history from '../History.js'
 
 const ImageStyle = {
@@ -48,7 +45,7 @@ export function ButtonProject(props) {
 
     return (
     <CardDiv>
-      <img src={props.backgroundImage} style={ImageStyle} />
+      <img src={props.backgroundImage} style={ImageStyle} alt='project'/>
       <Card2OverlayDiv 
       onClick={()=>{openProject(props.project)}}
       >
@@ -73,7 +70,6 @@ export function RotateProject(props) {
             width: "300px", 
             height:'180px',
             borderRadius: '10px'
-        //   maxHeight: "100%"
         }}
         />
       </FrontDiv>

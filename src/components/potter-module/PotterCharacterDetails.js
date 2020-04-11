@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Segment, Grid, Header} from 'semantic-ui-react';
+import {Segment, Grid} from 'semantic-ui-react';
 
 import {CHARACTER_IMAGES} from '../common/global-constants/PotterPage.consts'
 
