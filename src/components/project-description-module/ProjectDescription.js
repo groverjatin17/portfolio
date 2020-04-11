@@ -2,7 +2,7 @@ import React from 'react'
 import {withRouter} from 'react-router-dom'
 
 import NavigationBar from '../NavigationBar';
-import ProjectDesc from '../../assets/ProjectDesc.jpg'
+import ProjectDesc from '../../assets/images/ProjectDesc.jpg'
 import '../../styles/scss/react-transitions.scss';
 import {GiDiamonds} from 'react-icons/gi'
 function ProjectDescription(props) {
@@ -12,8 +12,7 @@ function ProjectDescription(props) {
             <div 
             className="react-transition swipe-left project-container"
             style={{
-                // backgroundImage: `url(${ProjectDesc})`,
-                backgroundImage: `linear-gradient(90deg, red, transparent)`,
+                backgroundImage: `url(${ProjectDesc})`,
             }}
             >
                 <div className='project-desc' >

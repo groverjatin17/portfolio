@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import {FormattedMessage} from 'react-intl';
 
-import giphy from "../../assets/city.gif";
+import giphy from "../../assets/images/city.gif";
 import "../../styles/scss/index.scss";
 import {Container, ImageOverlay, Giphy, Button, ImageCenterDiv, WelcomeMessage} from '../../styles/Hero.style'
 

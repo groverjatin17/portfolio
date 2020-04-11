@@ -39,7 +39,7 @@ export const ProjectContainer = styled.div`
   //   width: 100vw;
   display: flex;
   justify-content: space-around;
-  margin-bottom: 18px;
+  margin-bottom: 60px;
 `;
 
 export const CardDiv = styled.div`

@@ -1,14 +1,12 @@
 import React, { Component } from "react";
-import Marshmellow from "../../assets/Coding3.jpg";
-import styled from "styled-components";
-import automation from "../../assets/automation.jpg";
-import communique from "../../assets/communique.png";
-import testing from "../../assets/testing.png";
-import neo4j from "../../assets/neo4j.jpg";
-import dashboard from "../../assets/dashboard.png";
-import stock from "../../assets/stock.jpg";
-
-import { GiRobotAntennas, GiPerspectiveDiceFive } from "react-icons/gi";
+import Marshmellow from "../../assets/images/Coding3.jpg";
+import {css} from "styled-components";
+import automation from "../../assets/images/automation.jpg";
+import communique from "../../assets/images/communique.png";
+import testing from "../../assets/images/testing.png";
+import neo4j from "../../assets/images/neo4j.jpg";
+import dashboard from "../../assets/images/dashboard.png";
+import stock from "../../assets/images/stock.jpg";
 
 import { HoverProject, ButtonProject, RotateProject } from "./Project.js";
 import { ProjectContainer, Tooltip } from "../../styles/Project.style";
@@ -33,7 +31,6 @@ export default class SideProjects extends Component {
           <ButtonProject backgroundImage={dashboard} project={ELKStack} />
           <RotateProject backgroundImage={stock} project={FailedTradeReport}/>
         </ProjectContainer>
-
       </>
     );
   }

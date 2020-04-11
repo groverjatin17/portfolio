@@ -1,14 +1,14 @@
-import HufflePuff from '../../../assets/hufflepuff.png';
-import Slytherin from '../../../assets/slytherin.png';
-import Gryffindor from '../../../assets/gryffindor.png';
-import Ravenclaw from '../../../assets/ravenclaw.png';
+import HufflePuff from '../../../assets/images/hufflepuff.png';
+import Slytherin from '../../../assets/images/slytherin.png';
+import Gryffindor from '../../../assets/images/gryffindor.png';
+import Ravenclaw from '../../../assets/images/ravenclaw.png';
 
-import Wand from '../../../assets/Wand.png';
-import Patronus from '../../../assets/Patronus.png';
-import Animagus from '../../../assets/Animagus.png';
-import Boggart from '../../../assets/Boggart.png';
-import OrderOfThePhoenix from '../../../assets/OrderOfThePhoenix.png';
-import BloodType from '../../../assets/BloodType.png';
+import Wand from '../../../assets/images/Wand.png';
+import Patronus from '../../../assets/images/Patronus.png';
+import Animagus from '../../../assets/images/Animagus.png';
+import Boggart from '../../../assets/images/Boggart.png';
+import OrderOfThePhoenix from '../../../assets/images/OrderOfThePhoenix.png';
+import BloodType from '../../../assets/images/BloodType.png';
 
 
 const TABLE_HEADER = {

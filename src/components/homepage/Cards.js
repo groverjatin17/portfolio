@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 import CardMaker from './TechStackCards'
-import PythonImage from '../../assets/Python.png'
-import ReactImage from '../../assets/React.png'
-import ES6Image from '../../assets/ES6.jpg'
-import Linux from '../../assets/linux.png'
-import CSS from '../../assets/css.png'
-import HTML from '../../assets/html.png'
+import PythonImage from '../../assets/images/Python.png'
+import ReactImage from '../../assets/images/React.png'
+import ES6Image from '../../assets/images/ES6.jpg'
+import Linux from '../../assets/images/linux.png'
+import CSS from '../../assets/images/css.png'
+import HTML from '../../assets/images/html.png'
 
 export default class Cards extends Component {
 

@@ -5,7 +5,7 @@ import {Divider} from 'semantic-ui-react';
 import Hero from "./Hero";
 import Cards from "./Cards";
 import SideProjects from "./SideProjects";
-import workformoney from '../../assets/workformoney.gif'
+import workformoney from '../../assets/images/workformoney.gif'
 import SocialMedia from "./SocialMedia.js";
 import {connect} from 'react-redux';
 

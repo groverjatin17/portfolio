@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import NavigationBar from '../components/NavigationBar';
-import ContactMeImage from '../assets/contactMe.jpg';
+import ContactMeImage from '../assets/images/contactMe.jpg';
 import {Formik} from 'formik'
 
  class ContactMe extends Component {
