@@ -3,7 +3,7 @@ import styled from "styled-components";
 const Card =styled.div`
 &{
     box-shadow: 3px 3px 5px 1px  #888888;
-    height:250px;
+    height:200px;
     width:30%;
     display:flex;
     align-items:center;
@@ -18,9 +18,9 @@ const Card =styled.div`
 
 const CardImage =styled.img`
     &{
-    height:100px;
-    width:110px;
-    margin:30px;
+    height:85px;
+    width:90px;
+    margin:20px;
     }
 `
 const Title =styled.p`

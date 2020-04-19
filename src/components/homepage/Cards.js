@@ -22,7 +22,7 @@ export default class Cards extends Component {
     render() {
         return (
             <> 
-            <div style={{display:'flex', justifyContent:'space-around'}}>
+            <div style={{display:'flex', justifyContent:'space-around', marginBottom: '30px'}}>
                 <CardMaker 
                 title="Python" 
                 image={PythonImage} 

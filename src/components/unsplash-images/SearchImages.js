@@ -24,7 +24,7 @@ function SearchImage(props) {
                         <div className='overlay' >
                             <p>{item.user.name}</p>
                             <a href={downloadLink} download >
-                                <FiDownload className='download' size='2em' />
+                                <FiDownload className='download' size='2em' color='beige' />
                             </a>
                         </div>
                     </div>

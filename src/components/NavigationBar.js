@@ -65,11 +65,10 @@ class NavigationBar extends Component {
                             labeled
                             icon='world'
                             options={languageOptions}
-                            text={
-                                <FormattedMessage 
+                            text={<FormattedMessage 
                                     id="navbar.language" 
                                     defaultMessage="Language"
-                                />}
+                            />}
                             onChange={(e, data)=>{this.props.setLocale(data.value);
                             }}
                         />

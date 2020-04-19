@@ -14,11 +14,11 @@ import NavigationBar from '../NavigationBar';
 
 function UnsplashMainView(props) {
   
-    const {searchQuery, searchedImages, randomImage, saveSearch} = props;
+    const {searchQuery, searchedImages, randomImage, saveSearch, fetchImages} = props;
 
     useEffect(() => {
-        props.fetchImages(searchQuery, 1);
-    }, [searchQuery])
+        fetchImages(searchQuery, 1);
+    }, [fetchImages, searchQuery])
     
     let randomImageObject = {};
     if(_.isEmpty(randomImage)) {

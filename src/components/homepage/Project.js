@@ -35,7 +35,7 @@ export function HoverProject(props) {
         <Image src={props.backgroundImage} style={{borderRadius: '10px'}}/>
       </Reveal.Content>
       <Reveal.Content hidden>
-        <div style={{width: '300px', height:'180px', backgroundColor: 'white'}}></div>
+        <div style={{width: '300px', height:'180px', backgroundColor: 'white'}}>{props.project.projectTitle}</div>
       </Reveal.Content>
     </Reveal>
   );
@@ -49,7 +49,7 @@ export function ButtonProject(props) {
       <Card2OverlayDiv 
       onClick={()=>{openProject(props.project)}}
       >
-        <Card2OverlayPtag>Learn More ></Card2OverlayPtag>
+        <Card2OverlayPtag>{props.project.projectTitle}></Card2OverlayPtag>
       </Card2OverlayDiv>
     </CardDiv>
   );

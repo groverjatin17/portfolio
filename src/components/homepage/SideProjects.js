@@ -9,26 +9,22 @@ import dashboard from "../../assets/images/dashboard.png";
 import stock from "../../assets/images/stock.jpg";
 
 import { HoverProject, ButtonProject, RotateProject } from "./Project.js";
-import { ProjectContainer, Tooltip } from "../../styles/Project.style";
+import { ProjectContainer } from "../../styles/Project.style";
 
 import {Communique, FailedTradeReport, Neo4j, RtController, Mt599, ELKStack, SharePointPDR, } from '../../data/ProjectInfo';
 
 export default class SideProjects extends Component {
   render() {
     return (
-      // <MyDiv>
-      //    <Image src={Marshmellow} />
-      //    <Opacity/>
-      // </MyDiv>
       <>
         <ProjectContainer>
-          <HoverProject backgroundImage={communique} project={Communique} />
-          <ButtonProject backgroundImage={automation} project={SharePointPDR}/>
+          <RotateProject backgroundImage={communique} project={Communique} />
+          <RotateProject backgroundImage={automation} project={SharePointPDR}/>
           <RotateProject backgroundImage={testing} project={RtController} />
         </ProjectContainer>
         <ProjectContainer>
-        <HoverProject backgroundImage={neo4j} project={Neo4j}/>
-          <ButtonProject backgroundImage={dashboard} project={ELKStack} />
+          <RotateProject backgroundImage={neo4j} project={Neo4j}/>
+          <RotateProject backgroundImage={dashboard} project={ELKStack} />
           <RotateProject backgroundImage={stock} project={FailedTradeReport}/>
         </ProjectContainer>
       </>

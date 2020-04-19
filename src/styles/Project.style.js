@@ -1,39 +1,5 @@
 import styled from "styled-components";
 
-export const MyDiv = styled.div`
-  position: relative;
-  background: red;
-  width: 95vw;
-  height: 100vh;
-  // -webkit-transform: skewX(40deg);
-  // backface-visibility: hidden;
-  // max-width: 90%;
-  transform: skewX(-10deg);
-  overflow: hidden;
-  // float:left;
-  transform-origin: 50% 70%;
-`;
-
-export const Image = styled.img`
-  // position:absolute;
-  left: -200px;
-  // overflow:hidden;
-  width: 120vw;
-  height: 100%;
-  transform: skewX(10deg);
-  background-color: black;
-  transform-origin: 50% 70%;
-`;
-
-export const Opacity = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(128, 128, 128, 0.3);
-`;
-
 export const ProjectContainer = styled.div`
   //   width: 100vw;
   display: flex;
@@ -108,23 +74,5 @@ export const FrontDiv = styled.div`
 
   ${CardDiv}:hover & {
     transform: Perspective(600px) rotateY(-180deg);
-  }
-`;
-
-export const Tooltip = styled.span`
-  & {
-    visibility: hidden;
-    width: 120px;
-    background-color: black;
-    color: #fff;
-    text-align: center;
-    border-radius: 6px;
-    padding: 10px 10px;
-    position: absolute;
-    z-index: 1;
-  }
-
-  ${CardDiv}:hover &{
-    visibility: visible;
   }
 `;
