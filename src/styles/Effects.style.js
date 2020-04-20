@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const ProjectContainer = styled.div`
-  //   width: 100vw;
   display: flex;
   justify-content: space-around;
   margin-bottom: 60px;
@@ -12,13 +11,8 @@ export const CardDiv = styled.div`
     position: relative;
     width: 300px;
     height: 180px;
-    // border:1px solid
   }
 
-  //   &:hover {
-  //     // background-color: yellow;
-  //     // transform:scale(1.5);
-  //   }
 `;
 
 export const Card2OverlayDiv = styled.div`
@@ -65,7 +59,6 @@ export const BackDiv = styled.div`
 
 export const FrontDiv = styled.div`
   & {
-    // overflow: hidden;
     transform: Perspective(600px) rotateY(0deg);
     position: absolute;
     backface-visibility: hidden;

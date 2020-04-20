@@ -1,5 +1,5 @@
 // This file contains actions for this project
-import {POTTER_API_KEY, UNSPLASH_API_KEY} from '../styles/apiKeys';
+import {REACT_APP_POTTER_API_KEY, REACT_APP_UNSPLASH_API_KEY} from '../styles/apiKeys';
 
 export const LOCALE = 'LOCALE';
 export const POTTERCHARACTERS = 'POTTERCHARACTERS';
@@ -18,7 +18,7 @@ export function setLocale(value){
 
 export function getHarryPotterCharacters(){
   return function (dispatch){
-    fetch(`https://www.potterapi.com/v1/characters?key=${POTTER_API_KEY}`,{
+    fetch(`https://www.potterapi.com/v1/characters?key=${REACT_APP_POTTER_API_KEY}`,{
       method:'GET'})
     .then(response => response.json())
     .then(json =>{
@@ -32,7 +32,7 @@ export function getHarryPotterCharacters(){
 
 export function getRandomImage(){
   return function (dispatch){
-    fetch(`https://api.unsplash.com/photos/random?client_id=${UNSPLASH_API_KEY}&orientation=landscape`,{
+    fetch(`https://api.unsplash.com/photos/random?client_id=${REACT_APP_UNSPLASH_API_KEY}&orientation=landscape`,{
       method:'GET'})
     .then(response => response.json())
     .then(json =>{
@@ -46,7 +46,7 @@ export function getRandomImage(){
 
 export function getImagesOnSearch(query, page){
   return function (dispatch){
-    fetch(`https://api.unsplash.com/search/photos?client_id=${UNSPLASH_API_KEY}`
+    fetch(`https://api.unsplash.com/search/photos?client_id=${REACT_APP_UNSPLASH_API_KEY}`
     +`&query=${query}`
     +`&page=${page}`
     +`&per_page=9`

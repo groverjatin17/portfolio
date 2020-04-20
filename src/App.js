@@ -5,6 +5,8 @@ import {IntlProvider} from 'react-intl';
 
 import Layout from "./components/homepage/Layout";
 import History from "./components/History";
+
+import Miscellaneous from "./components/miscellaneous/Misc.mainView";
 import ProjectDescription from "./components/project-description-module/ProjectDescription";
 import ContactMe from './components/ContactMe';
 import PotterPage from './components/potter-module/Potter.mainView';
@@ -37,7 +39,8 @@ class App extends Component {
         <Router history={History}>
           <div className="transition-container">
           <Route exact path="/" component={Layout}/>
-          <Route path="/projects" component={ProjectDescription}></Route>
+          <Route path="/misc" component={Miscellaneous} />
+          <Route path="/projects" component={ProjectDescription} />
           <Route path='/contactMe' component={ContactMe} />
           <Route path='/potterPage' component={PotterPage} />
           <Route path='/images' component={Unsplash} />

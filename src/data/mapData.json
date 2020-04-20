@@ -1,0 +1,386 @@
+{
+    "type": "FeatureCollection",
+    "crs": {
+      "type": "name",
+      "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" }
+    },
+    "features": [
+      {
+        "type": "Feature",
+        "properties": {
+          "NAME": "Punjab",
+          "POPULATION": "29,611,935",
+          "SHARE": "2.22"
+        },
+        "geometry": {
+          "type": "Point",
+          "latitude": 30.9293211,
+          "longitude":75.5004841
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "NAME": "Jammu and Kashmir",
+          "POPULATION": "13,635,010",
+          "SHARE": "1.02"
+        },
+        "geometry": {
+          "type": "Point",
+          "latitude": 34.0476564,
+          "longitude": 76.7972892
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "NAME": "Uttar Pradesh",
+          "POPULATION": "228,959,599",
+          "SHARE": "17.15"
+        },
+        "geometry": {
+          "type": "Point",
+          "latitude": 27.1303344,
+          "longitude": 80.859666
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "NAME": "Maharashtra",
+          "POPULATION": "120,837,347",
+          "SHARE": "9.05"
+        },
+        "geometry": {
+          "type": "Point",
+          "latitude": 19.499393463134766,
+          "longitude": 75.83102416992188
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "NAME": "Bihar",
+          "POPULATION": "119,461,013",
+          "SHARE": "8.95"
+        },
+        "geometry": {
+          "type": "Point",
+          "latitude": 25.6440845,
+          "longitude": 85.906508
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "NAME": "West Bengal",
+          "POPULATION": "97,694,960",
+          "SHARE": "7.32"
+        },
+        "geometry": {
+          "type": "Point",
+          "latitude": 22.9964948,
+          "longitude": 87.6855882
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "NAME": "Madhya Pradesh",
+          "POPULATION": "82,342,793",
+          "SHARE": "6.17"
+        },
+        "geometry": {
+          "type": "Point",
+          "latitude": 23.8143419,
+          "longitude": 77.5340719
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "NAME": "Rajasthan",
+          "POPULATION": "78,230,816",
+          "SHARE": "5.86"
+        },
+        "geometry": {
+          "type": "Point",
+          "latitude": 26.8105777,
+          "longitude": 73.7684549
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "NAME": "Tamil Nadu",
+          "POPULATION": "76,481,545",
+          "SHARE": "5.73"
+        },
+        "geometry": {
+          "type": "Point",
+          "latitude": 10.9094334,
+          "longitude": 78.3665347
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "NAME": "Karnataka",
+          "POPULATION": "66,165,886",
+          "SHARE": "4.96"
+        },
+        "geometry": {
+          "type": "Point",
+          "latitude": 14.5203896,
+          "longitude": 75.7223521
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "NAME": "Gujrat",
+          "POPULATION": "63,907,200",
+          "SHARE": "4.79"
+        },
+        "geometry": {
+          "type": "Point",
+          "latitude": 22.2587,
+          "longitude": 71.1924
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "NAME": "Andhra Pradesh",
+          "POPULATION": "52,883,163",
+          "SHARE": "3.96"
+        },
+        "geometry": {
+          "type": "Point",
+          "latitude": 15.9240905,
+          "longitude": 80.1863809
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "NAME": "Odisha",
+          "POPULATION": "45,429,399",
+          "SHARE": "3.40"
+        },
+        "geometry": {
+          "type": "Point",
+          "latitude": 20.5431241,
+          "longitude": 84.6897321
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "NAME": "Telangana",
+          "POPULATION": "38,472,769",
+          "SHARE": "2.88"
+        },
+        "geometry": {
+          "type": "Point",
+          "latitude": 17.8495919,
+          "longitude": 79.1151663
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "NAME": "Jharkhand",
+          "POPULATION": "37,329,128",
+          "SHARE": "2.80"
+        },
+        "geometry": {
+          "type": "Point",
+          "latitude": 23.4559809,
+          "longitude": 85.2557301
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "NAME": "Kerala",
+          "POPULATION": "35,330,888",
+          "SHARE": "2.65"
+        },
+        "geometry": {
+          "type": "Point",
+          "latitude": 10.3528744,
+          "longitude": 76.5120396
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "NAME": "Assam",
+          "POPULATION": "34,586,234",
+          "SHARE": "2.59"
+        },
+        "geometry": {
+          "type": "Point",
+          "latitude": 26.4073841,
+          "longitude": 93.2551303
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "NAME": "Chhattisgarh",
+          "POPULATION": "28,566,990",
+          "SHARE": "2.14"
+        },
+        "geometry": {
+          "type": "Point",
+          "latitude": 21.6637359,
+          "longitude": 81.8406351
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "NAME": "Haryana",
+          "POPULATION": "27,388,008",
+          "SHARE": "2.05"
+        },
+        "geometry": {
+          "type": "Point",
+          "latitude": 29,
+          "longitude": 76
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "NAME": "Uttarakhand",
+          "POPULATION": "11,090,425",
+          "SHARE": "0.83"
+        },
+        "geometry": {
+          "type": "Point",
+          "latitude": 30.0919936,
+          "longitude": 79.3217666
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "NAME": "Tripura",
+          "POPULATION": "4,057,847",
+          "SHARE": "0.30"
+        },
+        "geometry": {
+          "type": "Point",
+          "latitude": 23.7750823,
+          "longitude": 91.7025091
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "NAME": "Meghalaya",
+          "POPULATION": "3,276,323",
+          "SHARE": "0.25"
+        },
+        "geometry": {
+          "type": "Point",
+          "latitude": 25.5379432,
+          "longitude": 91.2999102
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "NAME": "Manipur",
+          "POPULATION": "3,008,546",
+          "SHARE": "0.23"
+        },
+        "geometry": {
+          "type": "Point",
+          "latitude": 24.7208818,
+          "longitude": 93.9229386
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "NAME": "Nagaland",
+          "POPULATION": "2,189,297",
+          "SHARE": "0.16"
+        },
+        "geometry": {
+          "type": "Point",
+          "latitude": 26.1630556,
+          "longitude": 94.5884911
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "NAME": "Goa",
+          "POPULATION": "1,542,750",
+          "SHARE": "0.12"
+        },
+        "geometry": {
+          "type": "Point",
+          "latitude": 15.3004543,
+          "longitude": 74.0855134
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "NAME": "Arunachal Pradesh",
+          "POPULATION": "1,528,296",
+          "SHARE": "0.11"
+        },
+        "geometry": {
+          "type": "Point",
+          "latitude": 27.6891712,
+          "longitude": 96.4597226
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "NAME": "Mizoram",
+          "POPULATION": "1,205,974",
+          "SHARE": "0.09"
+        },
+        "geometry": {
+          "type": "Point",
+          "latitude": 23.2146169,
+          "longitude": 92.8687612
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "NAME": "Sikkim",
+          "POPULATION": "671,720",
+          "SHARE": "0.05"
+        },
+        "geometry": {
+          "type": "Point",
+          "latitude": 27.601029,
+          "longitude": 88.4541364
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "NAME": "Himachal Pradesh",
+          "POPULATION": "7,316,708",
+          "SHARE": "0.55"
+        },
+        "geometry": {
+          "type": "Point",
+          "latitude": 31.8167602,
+          "longitude": 77.3493205
+        }
+      }
+    ]
+  }

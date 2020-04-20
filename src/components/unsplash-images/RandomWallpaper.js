@@ -1,13 +1,15 @@
 import React from 'react'
-import {FiRefreshCw} from 'react-icons/fi';
+import {MdRefresh} from 'react-icons/md';
 import '../../styles/scss/index.scss';
 
-export default function RandomWallpaper({randomImageObject}) {
+export default function RandomWallpaper({randomImageObject, randomImageHandler}) {
     const {imageUrl, imageId, title, photographer, views, downloads} = randomImageObject;
 
     const downloadLink = `https://unsplash.com/photos/${imageId}/download?force=true`
 
     return (
+        <>
+        <MdRefresh style={{border: '1px solid', cursor: 'pointer', borderRadius: '4px', width: '80px'}} size= '2em' onClick={randomImageHandler}/>
         <div className='unsplash-random'>
             <div className='unsplash-wallpaper'
                 style={{
@@ -20,7 +22,7 @@ export default function RandomWallpaper({randomImageObject}) {
                     <a href={downloadLink} download>Download Image</a>
                 </div>
             </div>
-
         </div>
+        </>
     )
 }

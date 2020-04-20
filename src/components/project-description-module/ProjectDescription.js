@@ -17,10 +17,10 @@ function ProjectDescription(props) {
             >
                 <div className='project-desc' >
 
-                <h2>{props.location.state.project.projectName}</h2>
-                <h3>Project Description:{props.location.state.project.projectDescription}</h3>
+                <h2>{props.location.state.project.Name}</h2>
+                <h3>Project Description:{props.location.state.project.Description}</h3>
                 <ul>
-                    {props.location.state.project.projectPoints
+                    {props.location.state.project.Points
                     .map((item, key) =>(<li key={key}>{item}</li>))}
                 </ul>
                 </div>

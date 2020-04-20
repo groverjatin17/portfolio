@@ -33,7 +33,7 @@ class NavigationBar extends Component {
                 </Link>
                 <nav>
                     <ul style={{display: 'inline-block'}}>
-                        <li ><Link to="/" className='link'>Projects</Link></li>
+                        <li ><Link to="/misc" className='link'>Misc</Link></li>
                         <li >
                             <Link to="/images" className='link'>
                                 <FormattedMessage 

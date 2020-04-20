@@ -14,12 +14,16 @@ import NavigationBar from '../NavigationBar';
 
 function UnsplashMainView(props) {
   
-    const {searchQuery, searchedImages, randomImage, saveSearch, fetchImages} = props;
+    const {searchQuery, searchedImages, randomImage, saveSearch, fetchImages, getImage} = props;
 
     useEffect(() => {
         fetchImages(searchQuery, 1);
     }, [fetchImages, searchQuery])
     
+    useEffect(() => {
+        getImage();
+        }, [getImage])
+
     let randomImageObject = {};
     if(_.isEmpty(randomImage)) {
     } else {
@@ -30,28 +34,25 @@ function UnsplashMainView(props) {
         randomImageObject.views = randomImage.views;
         randomImageObject.downloads = randomImage.downloads;
     }
-    
-    const handleTabChange = (e, {activeIndex}) => {
-    if ( activeIndex === 1) {
-        props.getImage()
-    }
+
+    const randomImageHandler = () => {
+        getImage();
     }
 
     const panes = [
     {
-        menuItem: { key: 'searchImage', 
+        menuItem: { 
+                    key: 'searchImage', 
                     icon: 'images outline', 
                     content: <FormattedMessage
                                 id='images.searchImages'
-                                defaultMessage='Search Images'
-                            /> 
-},
+                                defaultMessage='Search Images' />
+                  },
         render: () => (<Tab.Pane>
                         <SearchImages 
                             searchedImages={searchedImages} 
-                            saveSearch={saveSearch}
-                        />
-                    </Tab.Pane>)
+                            saveSearch={saveSearch} />
+                       </Tab.Pane>)
     },
     {
         menuItem: { key: 'RandomWallpaper', 
@@ -64,7 +65,7 @@ function UnsplashMainView(props) {
         render: () => <Tab.Pane>
                         { _.isEmpty(randomImage) ? 
                         <PinkLoader /> : 
-                        <RandomWallpaper randomImageObject={randomImageObject} />
+                        <RandomWallpaper randomImageObject={randomImageObject} randomImageHandler={randomImageHandler} />
                         }
                     </Tab.Pane>
     },
@@ -75,7 +76,6 @@ function UnsplashMainView(props) {
             <NavigationBar theme= 'dark' />
             <br />
             <Tab panes={panes} 
-            onTabChange={handleTabChange}
             />
         </div>
     )

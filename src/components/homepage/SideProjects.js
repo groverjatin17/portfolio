@@ -1,31 +1,37 @@
 import React, { Component } from "react";
-import Marshmellow from "../../assets/images/Coding3.jpg";
-import {css} from "styled-components";
-import automation from "../../assets/images/automation.jpg";
-import communique from "../../assets/images/communique.png";
-import testing from "../../assets/images/testing.png";
-import neo4j from "../../assets/images/neo4j.jpg";
-import dashboard from "../../assets/images/dashboard.png";
-import stock from "../../assets/images/stock.jpg";
 
-import { HoverProject, ButtonProject, RotateProject } from "./Project.js";
-import { ProjectContainer } from "../../styles/Project.style";
+import {PROJECT_IMAGES} from '../common/global-constants/Homepage.consts';
 
-import {Communique, FailedTradeReport, Neo4j, RtController, Mt599, ELKStack, SharePointPDR, } from '../../data/ProjectInfo';
+import RotationEffect from "../common/components/animations/RotationEffect";
+import RevealEffect from "../common/components/animations/RevealEffect";
+import { ProjectContainer } from "../../styles/Effects.style";
+
+import {Communique, FailedTradeReport, Neo4j, RtController, ELKStack, SharePointPDR } from '../../data/ProjectInfo';
+
+import history from '../History';
 
 export default class SideProjects extends Component {
+
+  openProject= (project) =>{
+    history.push(
+        {
+            pathname:'/projects/' + project.Title,
+            state:{project}
+        })
+}
+
   render() {
     return (
       <>
         <ProjectContainer>
-          <RotateProject backgroundImage={communique} project={Communique} />
-          <RotateProject backgroundImage={automation} project={SharePointPDR}/>
-          <RotateProject backgroundImage={testing} project={RtController} />
+          <RotationEffect backgroundImage={PROJECT_IMAGES.COMMUNIQUE} data={Communique} onClickHandler={this.openProject} />
+          <RotationEffect backgroundImage={PROJECT_IMAGES.DASHBOARD} data={ELKStack} onClickHandler={this.openProject}/>
+          <RotationEffect backgroundImage={PROJECT_IMAGES.TESTING} data={RtController} onClickHandler={this.openProject}/>
         </ProjectContainer>
         <ProjectContainer>
-          <RotateProject backgroundImage={neo4j} project={Neo4j}/>
-          <RotateProject backgroundImage={dashboard} project={ELKStack} />
-          <RotateProject backgroundImage={stock} project={FailedTradeReport}/>
+          <RevealEffect backgroundImage={PROJECT_IMAGES.NEO4J} data={Neo4j} onClickHandler={this.openProject}/>
+          <RevealEffect backgroundImage={PROJECT_IMAGES.AUTOMATION} data={SharePointPDR} onClickHandler={this.openProject}/>
+          <RevealEffect backgroundImage={PROJECT_IMAGES.STOCK} data={FailedTradeReport} onClickHandler={this.openProject}/>
         </ProjectContainer>
       </>
     );
