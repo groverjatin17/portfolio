@@ -1,7 +1,7 @@
 import React, { Component, lazy, Suspense } from 'react'
 import {connect} from 'react-redux';
 
-import PinkLoader from '../common/components/PinkLoader';
+import PinkLoader from '../common/components/lottie-animations/PinkLoader';
 import NavigationBar from '../NavigationBar';
 import {getHarryPotterCharacters} from '../../actions/actions_info';
 import PotterCharacterSearch from './PotterCharacterSearch';

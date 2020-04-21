@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
 import {Link} from 'react-router-dom';
-import {FormattedMessage} from 'react-intl';
+import {FormattedMessage, i} from 'react-intl';
 import { Dropdown } from 'semantic-ui-react'
 import { connect } from "react-redux";
 
 import {setLocale} from '../actions/actions_info';
 
 import "../styles/scss/index.scss";
+
 let style={};
 const languageOptions = [
     { key: 'English', text: 'English', value: 'en-US' },
@@ -18,7 +19,7 @@ class NavigationBar extends Component {
         if (this.props.theme === 'dark') {
             style = {
                 backgroundColor: '#24292d',
-                position: 'inherit'
+                position: 'inherit',
             }
         } else {
             style= {}
@@ -33,7 +34,14 @@ class NavigationBar extends Component {
                 </Link>
                 <nav>
                     <ul style={{display: 'inline-block'}}>
-                        <li ><Link to="/misc" className='link'>Misc</Link></li>
+                        <li >
+                            <Link to="/misc" className='link'>
+                                <FormattedMessage 
+                                    id="navbar.miscellaneous" 
+                                    defaultMessage="Miscellaneous"
+                                />
+                            </Link>
+                        </li>
                         <li >
                             <Link to="/images" className='link'>
                                 <FormattedMessage 

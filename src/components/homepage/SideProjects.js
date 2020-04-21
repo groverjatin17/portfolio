@@ -2,8 +2,8 @@ import React, { Component } from "react";
 
 import {PROJECT_IMAGES} from '../common/global-constants/Homepage.consts';
 
-import RotationEffect from "../common/components/animations/RotationEffect";
-import RevealEffect from "../common/components/animations/RevealEffect";
+import RotationEffect from "../common/components/effects/RotationEffect";
+import RevealEffect from "../common/components/effects/RevealEffect";
 import { ProjectContainer } from "../../styles/Effects.style";
 
 import {Communique, FailedTradeReport, Neo4j, RtController, ELKStack, SharePointPDR } from '../../data/ProjectInfo';

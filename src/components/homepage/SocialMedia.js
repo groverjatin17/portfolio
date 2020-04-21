@@ -1,13 +1,10 @@
 import React, { Component } from "react";
 import {FormattedMessage} from 'react-intl';
 
-import { TiSocialFacebook } from "react-icons/ti";
-import { TiSocialGithub } from "react-icons/ti";
-import { TiSocialLinkedin } from "react-icons/ti";
-import { TiSocialTwitter } from "react-icons/ti";
+import { TiSocialFacebook, TiSocialGithub, TiSocialLinkedin, TiSocialTwitter  } from "react-icons/ti";
 
 import TipJar from '../../assets/images/tip-jar.png'
-import IndianHead from '../common/components/IndianHead';
+import IndianHead from '../common/components/lottie-animations/IndianHead';
 
 import '../../styles/scss/index.scss';
 

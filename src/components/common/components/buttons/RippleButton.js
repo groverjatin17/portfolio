@@ -1,6 +1,6 @@
-import '../../../styles/scss/index.scss';
 import React from 'react';
 
+import '../../../../styles/scss/index.scss';
 
 export default function RippleButton({ children, onClick }) {
     const [coords, setCoords] = React.useState({ x: -1, y: -1 });

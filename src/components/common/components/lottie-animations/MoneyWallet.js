@@ -1,9 +1,9 @@
 
 import React from 'react'
 import Lottie from 'react-lottie';
-import * as animationData from '../../../styles/animations/50-material-loader.json';
+import * as animationData from '../../../../styles/animations/588-wallet-coin.json';
 
-export default function PinkLoader() {
+export default function MoneyWallet(props) {
 
     const defaultOptions = {
         loop: true, 
@@ -16,8 +16,8 @@ export default function PinkLoader() {
     return (
         <Lottie 
             options={defaultOptions}
-            height={100}
-            width={100}
+            height={props.height}
+            width={props.width}
         />
     )
 }

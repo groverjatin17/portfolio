@@ -8,7 +8,7 @@ import History from "./components/History";
 
 import Miscellaneous from "./components/miscellaneous/Misc.mainView";
 import ProjectDescription from "./components/project-description-module/ProjectDescription";
-import ContactMe from './components/ContactMe';
+import ContactMe from './components/contact-me/ContactMe.mainView';
 import PotterPage from './components/potter-module/Potter.mainView';
 import Unsplash from './components/unsplash-images/Unsplash.mainView';
 

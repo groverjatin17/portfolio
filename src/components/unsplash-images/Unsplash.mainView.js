@@ -1,5 +1,5 @@
-import React, {useEffect} from 'react'
-import {withRouter} from 'react-router-dom'
+import React, {useEffect} from 'react';
+import {withRouter} from 'react-router-dom';
 import {connect} from 'react-redux';
 import {FormattedMessage} from 'react-intl';
 
@@ -9,7 +9,7 @@ import _ from 'lodash';
 import {getImagesOnSearch, saveSearchQuery, getRandomImage} from '../../actions/actions_info';
 import SearchImages from './SearchImages';
 import RandomWallpaper from './RandomWallpaper';
-import PinkLoader from '../common/components/PinkLoader';
+import PinkLoader from '../common/components/lottie-animations/PinkLoader';
 import NavigationBar from '../NavigationBar';
 
 function UnsplashMainView(props) {

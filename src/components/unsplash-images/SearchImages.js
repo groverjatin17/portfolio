@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import {FormattedMessage} from 'react-intl';
 import _ from 'lodash'
 import {FiDownload} from 'react-icons/fi'
-import RippleButton from '../common/components/RippleButton';
+import RippleButton from '../common/components/buttons/RippleButton';
 
 function SearchImage(props) {
 
