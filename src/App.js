@@ -18,41 +18,44 @@ import Hindi from './assets/locale/hi-IN.json';
 import './styles/scss/react-transitions.scss';
 
 class App extends Component {
-  render() {
-    const { reducerInfo } = this.props;
-    const { locale } = reducerInfo;
-    let language;
-    switch (locale) {
-      case 'en-US':
-        language = English;
-        break;
-      case 'hi-IN':
-        language = Hindi;
-        break;
-      default:
-        language = English;
-        break;
-    }
+    render() {
+        const { reducerInfo } = this.props;
+        const { locale } = reducerInfo;
+        let language;
+        switch (locale) {
+            case 'en-US':
+                language = English;
+                break;
+            case 'hi-IN':
+                language = Hindi;
+                break;
+            default:
+                language = English;
+                break;
+        }
 
-    return (
-      <IntlProvider locale={locale} messages={language}>
-        <Router history={History}>
-          <div className="transition-container">
-            <Route exact path="/" component={Layout} />
-            <Route path="/misc" component={Miscellaneous} />
-            <Route path="/projects" component={ProjectDescription} />
-            <Route path="/contactMe" component={ContactMe} />
-            <Route path="/potterPage" component={PotterPage} />
-            <Route path="/images" component={Unsplash} />
-          </div>
-        </Router>
-      </IntlProvider>
-    );
-  }
+        return (
+            <IntlProvider locale={locale} messages={language}>
+                <Router history={History}>
+                    <div className='transition-container'>
+                        <Route exact path='/' component={Layout} />
+                        <Route path='/misc' component={Miscellaneous} />
+                        <Route
+                            path='/projects'
+                            component={ProjectDescription}
+                        />
+                        <Route path='/contactMe' component={ContactMe} />
+                        <Route path='/potterPage' component={PotterPage} />
+                        <Route path='/images' component={Unsplash} />
+                    </div>
+                </Router>
+            </IntlProvider>
+        );
+    }
 }
 
 const mapStateToProps = (state) => ({
-  reducerInfo: state.reducerInfo,
+    reducerInfo: state.reducerInfo,
 });
 
 export default connect(mapStateToProps)(App);
