@@ -2,15 +2,16 @@ import React, { Component } from "react";
 import { Grid } from "semantic-ui-react";
 import NavigationBar from '../NavigationBar';
 import MapBox from "./MapBox";
+import D3 from "./D3";
 
 const compArray = [
   {
     compId: 1,
-    component: <MapBox />,
+    component: <D3 />
   },
   {
     compId: 2,
-    component: <h1 style={{ border: "1px solid" }}>component 1</h1>,
+    component: <MapBox />
   },
   {
     compId: 3,
