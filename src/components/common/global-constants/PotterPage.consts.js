@@ -10,21 +10,20 @@ import Boggart from '../../../assets/images/Boggart.png';
 import OrderOfThePhoenix from '../../../assets/images/OrderOfThePhoenix.png';
 import BloodType from '../../../assets/images/BloodType.png';
 
-
 const TABLE_HEADER = {
-    HASH:'#',
-    NAME:'NAME',
-    HOUSE:'HOUSE',
-    BLOOD:'BLOOD',
-    WAND:'WAND',
-    BOGGART:'BOGGART',
-    PATRONUS:'PATRONUS',
-    ARMY:'ARMY'
+    HASH: '#',
+    NAME: 'NAME',
+    HOUSE: 'HOUSE',
+    BLOOD: 'BLOOD',
+    WAND: 'WAND',
+    BOGGART: 'BOGGART',
+    PATRONUS: 'PATRONUS',
+    ARMY: 'ARMY',
 };
 
 const BLOOD_TYPES = {
-    PURE_BLOOD:'pure-blood',
-    HALF_BLOOD:'half-blood',
+    PURE_BLOOD: 'pure-blood',
+    HALF_BLOOD: 'half-blood',
     MUGGLE: 'muggle',
 };
 
@@ -32,14 +31,14 @@ const HOUSE_IMAGES = {
     HUFFLEPUFF: HufflePuff,
     SLYTHERIN: Slytherin,
     GRYFFINDOR: Gryffindor,
-    REVENCLAW: Ravenclaw
+    REVENCLAW: Ravenclaw,
 };
 
 const HOUSE_NAMES = {
     HUFFLEPUFF: 'hufflePuff',
     SLYTHERIN: 'slytherin',
     GRYFFINDOR: 'gryffindor',
-    RAVENCLAW: 'ravenclaw'
+    RAVENCLAW: 'ravenclaw',
 };
 
 const CHARACTER_IMAGES = {
@@ -49,8 +48,12 @@ const CHARACTER_IMAGES = {
     BOGGART: Boggart,
     ORDER_OF_THE_PHOENIX: OrderOfThePhoenix,
     BLOOD_TYPE: BloodType,
-
 };
 
-
-export {TABLE_HEADER, BLOOD_TYPES, HOUSE_IMAGES, HOUSE_NAMES, CHARACTER_IMAGES};
+export {
+    TABLE_HEADER,
+    BLOOD_TYPES,
+    HOUSE_IMAGES,
+    HOUSE_NAMES,
+    CHARACTER_IMAGES,
+};
