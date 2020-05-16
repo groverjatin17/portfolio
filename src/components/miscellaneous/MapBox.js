@@ -10,7 +10,7 @@ import ReactMapGl, {
 import * as stateData from '../../data/mapData.json';
 import MarkerIcon from '../../assets/images/marker.svg';
 
-export default function MapBox(props) {
+export default function MapBox() {
     const geolocateStyle = {
         marginBottom: 10,
     };
@@ -40,7 +40,7 @@ export default function MapBox(props) {
         <ReactMapGl
             {...viewport}
             mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
-            onViewportChange={(viewport) => {
+            onViewportChange={() => {
                 setViewport(viewport);
             }}
             mapStyle='mapbox://styles/groverjatin17/ck96zzj543vsg1ip7u4xpg3uo'
@@ -61,13 +61,12 @@ export default function MapBox(props) {
                     latitude={state.geometry.latitude}
                     longitude={state.geometry.longitude}
                 >
-                    <div>
-                        <img
-                            src={MarkerIcon}
-                            alt='marker'
-                            onClick={() => setSelectedState(state)}
-                        />
-                    </div>
+                    <button
+                        type='button'
+                        onClick={() => setSelectedState(state)}
+                    >
+                        <img src={MarkerIcon} alt='marker' />
+                    </button>
                 </Marker>
             ))}
             {selectedState && (

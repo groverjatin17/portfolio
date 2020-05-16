@@ -8,7 +8,7 @@ const colourStyles = {
         backgroundColor: 'white',
         width: '20%',
     }),
-    option: (styles, { data, isDisabled, isFocused, isSelected }) => ({
+    option: (styles, { isDisabled, isFocused, isSelected }) => ({
         ...styles,
         backgroundColor: isSelected ? 'yellow' : isFocused ? 'black' : null,
         color: isFocused ? 'brown' : 'black',
@@ -36,17 +36,16 @@ class PotterCharacterSearch extends Component {
     };
 
     render() {
-        if (this.props.potterCharacters.length > 0) {
-            tranformedOptionSet = this.transformOptions(
-                this.props.potterCharacters
-            );
+        const { potterCharacters, handleSelectedCharacter } = this.props;
+        if (potterCharacters.length > 0) {
+            tranformedOptionSet = this.transformOptions(potterCharacters);
         }
         return (
             <Select
                 options={tranformedOptionSet}
                 styles={colourStyles}
                 isClearable
-                onChange={this.props.handleSelectedCharacter}
+                onChange={handleSelectedCharacter}
             />
         );
     }

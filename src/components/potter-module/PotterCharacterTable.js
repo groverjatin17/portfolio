@@ -30,10 +30,14 @@ const WAND_TYPES = [
 
 let numberOfPages = 0;
 class PotterCharacterTable extends Component {
-    state = { activePage: 1 };
+    constructor(props) {
+        super(props);
+        this.state = { activePage: 1 };
+    }
 
     renderTableRows = () => {
         const { potterCharacters } = this.props;
+        const { activePage } = this.state;
 
         const renderedHouse = (house) => {
             if (_.isUndefined(house)) {
@@ -78,7 +82,7 @@ class PotterCharacterTable extends Component {
         };
         const tableRows =
             potterCharacters.length > 0 &&
-            this.props.potterCharacters
+            potterCharacters
                 .filter((item) => item.bloodStatus !== 'unknown')
                 .map((item, key) => {
                     const {
@@ -157,7 +161,7 @@ class PotterCharacterTable extends Component {
                 ? (numberOfPages += 1)
                 : numberOfPages;
         const reducedTableRows =
-            tableRows && tableRows.splice((this.state.activePage - 1) * 10, 10);
+            tableRows && tableRows.splice((activePage - 1) * 10, 10);
 
         return reducedTableRows;
     };
@@ -183,8 +187,6 @@ class PotterCharacterTable extends Component {
                 <center>
                     <Pagination
                         defaultActivePage={1}
-                        // firstItem={null}
-                        // lastItem={null}
                         pointing
                         secondary
                         totalPages={numberOfPages}

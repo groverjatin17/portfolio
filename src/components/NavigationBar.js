@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { FormattedMessage } from 'react-intl';
 import { Dropdown } from 'semantic-ui-react';
 import { connect } from 'react-redux';
@@ -29,42 +29,42 @@ class NavigationBar extends Component {
 
         return (
             <div className='navbar' style={style}>
-                <Link to='/'>
+                <NavLink to='/'>
                     <p className='logo'>Jatin Grover</p>
-                </Link>
+                </NavLink>
                 <nav>
                     <ul style={{ display: 'inline-block' }}>
                         <li>
-                            <Link to='/misc' className='link'>
+                            <NavLink to='/misc' className='link'>
                                 <FormattedMessage
                                     id='navbar.miscellaneous'
                                     defaultMessage='Miscellaneous'
                                 />
-                            </Link>
+                            </NavLink>
                         </li>
                         <li>
-                            <Link to='/images' className='link'>
+                            <NavLink to='/images' className='link'>
                                 <FormattedMessage
                                     id='navbar.images'
                                     defaultMessage='Images'
                                 />
-                            </Link>
+                            </NavLink>
                         </li>
                         <li>
-                            <Link to='/contactMe' className='link'>
+                            <NavLink to='/contactMe' className='link'>
                                 <FormattedMessage
                                     id='navbar.contactMe'
                                     defaultMessage='Contact Me'
                                 />
-                            </Link>
+                            </NavLink>
                         </li>
                         <li>
-                            <Link to='/potterPage' className='link'>
+                            <NavLink to='/potterPage' className='link'>
                                 <FormattedMessage
                                     id='navbar.harryPotter'
                                     defaultMessage='HP7'
                                 />
-                            </Link>
+                            </NavLink>
                         </li>
                         <li>
                             <Dropdown
