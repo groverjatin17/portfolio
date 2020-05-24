@@ -34,11 +34,13 @@ export default class SideProjects extends Component {
                         data={Communique}
                         onClickHandler={this.openProject}
                     />
+                    <br />
                     <RotationEffect
                         backgroundImage={PROJECT_IMAGES.DASHBOARD}
                         data={ELKStack}
                         onClickHandler={this.openProject}
                     />
+                    <br />
                     <RotationEffect
                         backgroundImage={PROJECT_IMAGES.TESTING}
                         data={RtController}
@@ -51,11 +53,14 @@ export default class SideProjects extends Component {
                         data={Neo4j}
                         onClickHandler={this.openProject}
                     />
+                    <br />
                     <RevealEffect
                         backgroundImage={PROJECT_IMAGES.AUTOMATION}
                         data={SharePointPDR}
                         onClickHandler={this.openProject}
                     />
+                    <br />
+
                     <RevealEffect
                         backgroundImage={PROJECT_IMAGES.STOCK}
                         data={FailedTradeReport}

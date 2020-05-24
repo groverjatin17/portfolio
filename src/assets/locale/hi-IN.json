@@ -9,8 +9,8 @@
     "hero.viewProjects": "प्रोजेक्ट देखें",
     "heading.techStack": "टेक स्टैक",
     "heading.myProjects": "मेरे प्रोजेक्ट्स",
-    "footer.getInTouch": "रचनाकार से संपर्क करें",
-    "footer.donateDesc": "इस वेबसाइट को बनाने में घंटों लग गए। एक संरक्षक बनना चाहते हैं?",
+    "footer.getInTouch": "रचनाकार से संपर्क करें| 24 घंटे के भीतर जवाब",
+    "footer.donateDesc": "इस वेबसाइट को बनाने में घंटों लग गए। <br></br>एक संरक्षक बनना चाहते हैं?",
     "footer.donateButton": "योगदान",
     "footer.privacyPolicy": "गोपनीयता नीति",
     "footer.termsOfService": "सेवा की शर्तें",
@@ -30,5 +30,4 @@
     "contactme.emailValidation.required": "ईमेल पते की ज़रुरत है",
     "contactme.queryValidation.min": "कृपया कम से कम 20 अक्षर दर्ज करें",
     "contactme.queryValidation.required": "कृपया अपना प्रश्न दर्ज करें"
-
 }

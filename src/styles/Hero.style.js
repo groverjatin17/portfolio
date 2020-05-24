@@ -12,6 +12,10 @@ const ImageOverlay = styled.div`
     width: 100%;
     height: 100%;
     background-color: rgba(128, 128, 128, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 `;
 
 const Giphy = styled.img`
@@ -20,12 +24,10 @@ const Giphy = styled.img`
 `;
 
 const ImageCenterDiv = styled.div`
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-left: -300px;
-    margin-top: -120px;
-    // border: 5px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 `;
 
 const Button = styled.button`
@@ -38,9 +40,6 @@ const Button = styled.button`
     font-weight: 600;
     color: sandybrown;
     cursor: pointer;
-    position: absolute;
-    left: 45%;
-    bottom: 41%;
 
     &:hover {
         color: white;
@@ -53,6 +52,14 @@ const WelcomeMessage = styled.p`
     color: white;
     font-weight: bold;
     font-size: 40px;
+
+    @media (max-width: 768px) {
+        font-size: 30px;
+        text-align: center;
+        br {
+            display: none;
+        }
+    }
 `;
 
 export {

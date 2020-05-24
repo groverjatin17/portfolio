@@ -20,28 +20,29 @@ export default class Hero extends Component {
         return (
             <>
                 <Container className='top-panel'>
-                    <ImageOverlay />
+                    <ImageOverlay>
+                        <ImageCenterDiv>
+                            <WelcomeMessage>
+                                <FormattedMessage
+                                    id='hero.description1'
+                                    defaultMessage='Hi, I am Jatin. I am a Web Developer.'
+                                />
+                                <br />
+                                <FormattedMessage
+                                    id='hero.description2'
+                                    defaultMessage='I build interactive Websites'
+                                />
+                            </WelcomeMessage>
+                            <Button onClick={scrollIntoView}>
+                                <FormattedMessage
+                                    id='hero.viewProjects'
+                                    defaultMessage='View projects'
+                                />
+                            </Button>
+                        </ImageCenterDiv>
+                    </ImageOverlay>
                     <NavigationBar />
                     <Giphy src={giphy} alt='Loading...' />
-                    <ImageCenterDiv>
-                        <WelcomeMessage>
-                            <FormattedMessage
-                                id='hero.description1'
-                                defaultMessage='Hi, I am Jatin. I am a Web Developer.'
-                            />
-                            <br />
-                            <FormattedMessage
-                                id='hero.description2'
-                                defaultMessage='I build interactive Websites'
-                            />
-                        </WelcomeMessage>
-                    </ImageCenterDiv>
-                    <Button onClick={scrollIntoView}>
-                        <FormattedMessage
-                            id='hero.viewProjects'
-                            defaultMessage='View projects'
-                        />
-                    </Button>
                 </Container>
             </>
         );

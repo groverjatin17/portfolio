@@ -8,7 +8,8 @@ const CardMaker = ({ rating, image, title }) => (
             defaultRating={rating}
             maxRating={5}
             icon='star'
-            style={{ float: 'right', margin: '5% 0% 0% 62%' }}
+            className='tech-rating'
+            // style={{ float: 'right', margin: '5% 0% 0% 62%' }}
             disabled
         />
         <CardImage src={image} alt='Loading...' />

@@ -22,7 +22,7 @@ class Layout extends Component {
         return (
             <>
                 <Hero scrollIntoView={this.scrollToTitleRef} />
-                <div style={{ margin: '5px 20px' }}>
+                <div className='layout'>
                     <Divider horizontal style={{ margin: '30px 0px 10px 0' }}>
                         <h1 className='section-title'>
                             <FormattedMessage
@@ -41,11 +41,13 @@ class Layout extends Component {
                         </h1>
                     </Divider>
                     <SideProjects />
-                    <img
-                        src={workformoney}
-                        alt='Loading...'
-                        style={{ maxWidth: '500px' }}
-                    />
+                    <div>
+                        <img
+                            src={workformoney}
+                            alt='Loading...'
+                            style={{ maxWidth: '100%' }}
+                        />
+                    </div>
                     <SocialMedia />
                 </div>
             </>

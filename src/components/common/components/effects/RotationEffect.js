@@ -11,15 +11,7 @@ export default function RotateProject(props) {
             }}
         >
             <FrontDiv>
-                <img
-                    src={backgroundImage}
-                    alt='project description'
-                    style={{
-                        width: '300px',
-                        height: '180px',
-                        borderRadius: '10px',
-                    }}
-                />
+                <img src={backgroundImage} alt='project description' />
             </FrontDiv>
             <BackDiv>
                 <h1 style={{ padding: 0, margin: 0 }}>{data.Title}</h1>

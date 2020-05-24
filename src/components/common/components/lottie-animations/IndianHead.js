@@ -11,7 +11,14 @@ export default function IndianHead(props) {
             preserveAspectRatio: 'xMidYMid slice',
         },
     };
-    const { height, width } = props;
+    const { height, width, additionalStyle } = props;
 
-    return <Lottie options={defaultOptions} height={height} width={width} />;
+    return (
+        <Lottie
+            options={defaultOptions}
+            height={height}
+            width={width}
+            style={additionalStyle}
+        />
+    );
 }

@@ -57,7 +57,22 @@
     background-size: 5rem 0.14rem;
     margin: 25px 0;
 }
+.layout {
+    margin: 5px 20px;
 
+    @media (max-width: 768px) {
+        margin: 0;
+    }
+
+    .tech-rating {
+        float: right;
+        margin: 5% 0% 0% 62%;
+
+        @media (max-width: 768px) {
+            margin: 5% 0 0 0;
+        }
+    }
+}
 .section-title {
     display: inline-block;
     font-family: Raleway, sans-serif;
@@ -69,6 +84,13 @@
     height: 300px;
     width: 100%;
     background-color: #484848;
+
+    @media (max-width: 768px) {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
     & .footer-column {
         padding: 0;
         margin: 0;
@@ -76,9 +98,26 @@
         width: 50%;
         display: inline-block;
         vertical-align: top;
+
+        @media (max-width: 768px) {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
         & .indian-head {
+            width: 200px;
             margin: 50px 10px 50px 50px;
-            float: left;
+            display: inline-block;
+
+            @media (max-width: 768px) {
+                margin: 50px 0px 0px 0px;
+                width: 70%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            width: 100%;
         }
     }
     & .divider {
@@ -88,6 +127,14 @@
         vertical-align: top;
         border-radius: 50%;
         margin-top: 33px;
+
+        @media (max-width: 768px) {
+            border-top: 2px solid #929292;
+            width: 80%;
+            display: inline-block;
+            border-radius: 50%;
+            margin-top: 20px;
+        }
     }
     & .content {
         width: 266px;
@@ -96,10 +143,21 @@
         margin: 130px 0 0 20px;
         color: #939598;
 
+        & center {
+            display: contents;
+
+            @media (max-width: 768px) {
+                display: block;
+            }
+        }
+        @media (max-width: 768px) {
+            width: auto;
+            margin: 10px 0 0 0;
+        }
         & .social-media-icon {
             color: beige;
             font-size: 2em;
-            margin-right: '5px';
+            margin-right: 5px;
         }
         & .social-media-icon:nth-of-type(1) {
             margin-left: 17px;
@@ -127,7 +185,7 @@
             background-color: #545557;
         }
         & button:after {
-            content: ' \02C3';
+            content: '\02C3';
             font-weight: bold;
         }
     }
@@ -135,6 +193,10 @@
         opacity: 0.8;
         width: 200px;
         margin: 82px 10px 0 0;
+
+        @media (max-width: 768px) {
+            margin: 30px 10px 0 0;
+        }
     }
     & .tipjar:hover {
         opacity: 1;

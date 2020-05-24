@@ -19,53 +19,74 @@ export default class SocialMedia extends Component {
             <div className='footer'>
                 <div className='footer-column'>
                     <div className='indian-head'>
-                        <IndianHead height='200px' width='200px' />
+                        <IndianHead
+                            height='100%'
+                            width='100%'
+                            additionalStyle={{
+                                // margin: '50px 10px 50px 50px',
+                                display: 'inline-block',
+                            }}
+                        />
                     </div>
                     <div className='divider' />
                     <div className='content'>
-                        <FormattedMessage
-                            id='footer.getInTouch'
-                            defaultMessage='Get in touch with the creator'
-                        />
-                        <br />
-                        <TiSocialFacebook className='social-media-icon' />
-                        <TiSocialGithub className='social-media-icon' />
-                        <TiSocialLinkedin className='social-media-icon' />
-                        <TiSocialTwitter className='social-media-icon' />
+                        <p>
+                            <FormattedMessage
+                                id='footer.getInTouch'
+                                defaultMessage='Get in touch with the creator. <br></br>Replies within 24 hours'
+                                values={{
+                                    br: () => <br />,
+                                }}
+                            />
+                        </p>
+                        <div>
+                            <TiSocialFacebook className='social-media-icon' />
+                            <TiSocialGithub className='social-media-icon' />
+                            <TiSocialLinkedin className='social-media-icon' />
+                            <TiSocialTwitter className='social-media-icon' />
+                        </div>
                     </div>
                 </div>
                 <div className='footer-column'>
                     <img src={TipJar} alt='tipjar' className='tipjar' />
                     <div className='divider' />
                     <div className='content'>
-                        <FormattedMessage
-                            id='footer.donateDesc'
-                            defaultMessage='It took hours and hours to build this website. Wanna donate few extra meals?'
-                        />
-                        <button
-                            type='button'
-                            className=''
-                            onClick={() => {
-                                console.log('do  this');
-                            }}
-                        >
+                        <p>
                             <FormattedMessage
-                                id='footer.donateButton'
-                                defaultMessage='DONATE'
+                                id='footer.donateDesc'
+                                defaultMessage='It took hours and hours to build this website. <br></br>Wanna donate few extra meals?'
+                                values={{
+                                    br: () => <br />,
+                                }}
                             />
-                        </button>
+                        </p>
+
+                        <center>
+                            <button
+                                type='button'
+                                className=''
+                                onClick={() => {
+                                    console.log('do  this');
+                                }}
+                            >
+                                <FormattedMessage
+                                    id='footer.donateButton'
+                                    defaultMessage='DONATE'
+                                />
+                            </button>
+                        </center>
                     </div>
                 </div>
                 <div className='termsFooter'>
                     <p>
-                        |{' '}
+                        |
                         <a href='#privacy'>
                             <FormattedMessage
                                 id='footer.privacyPolicy'
                                 defaultMessage='PRIVACY POLICY'
                             />
-                        </a>{' '}
-                        |{' '}
+                        </a>
+                        |
                         <a href='#terms'>
                             <FormattedMessage
                                 id='footer.termsOfService'

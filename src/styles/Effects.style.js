@@ -4,6 +4,11 @@ export const ProjectContainer = styled.div`
     display: flex;
     justify-content: space-around;
     margin-bottom: 60px;
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+        align-items: center;
+    }
 `;
 
 export const CardDiv = styled.div`
@@ -11,6 +16,10 @@ export const CardDiv = styled.div`
         position: relative;
         width: 300px;
         height: 180px;
+    }
+
+    @media (max-width: 768px) {
+        width: 86%;
     }
 `;
 
@@ -64,6 +73,11 @@ export const FrontDiv = styled.div`
         transition: transform 0.6s linear;
     }
 
+    & img {
+        width: 100%;
+        height: 180px;
+        border-radius: 10px;
+    }
     ${CardDiv}:hover & {
         transform: Perspective(600px) rotateY(-180deg);
     }
