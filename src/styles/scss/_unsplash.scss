@@ -22,13 +22,13 @@
 }
 
 .unsplash-img:hover .overlay {
-    width:100%;
-    height:100%;
-    background:rgba(0,0,0,.2);
-    position:absolute;
-    top:0;
-    left:0;
-    display:inline-block;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: inline-block;
 
     & p {
         position: absolute;
@@ -61,7 +61,7 @@
         height: 100%;
         color: #595f6e;
         padding-top: 20px;
-        border:none;
+        border: none;
         outline: none;
     }
 
@@ -87,7 +87,7 @@
         transition: all 0.3s ease;
     }
 
-    & .content-name{
+    & .content-name {
         position: absolute;
         bottom: 5px;
         left: 0;
@@ -95,16 +95,14 @@
     }
 
     & input:focus + .label-name .content-name,
-    & input:valid + .label-name .content-name
-    {
+    & input:valid + .label-name .content-name {
         transform: translateY(-150%);
         font-size: 14px;
-        color:  #5fa8d3;
+        color: #5fa8d3;
     }
 
     & input:focus + .label-name::after,
-    & input:valid + .label-name::after
-     {
+    & input:valid + .label-name::after {
         transform: translateX(0%);
         transition: transform 0.3s ease;
     }
@@ -132,12 +130,17 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        background:rgba(0,0,0,.2);
-        
-        & p a{
+        background: rgba(0, 0, 0, 0.2);
+
+        & p a {
             font-size: 13px;
             color: white;
         }
     }
+}
 
+@media (max-width: 768px) {
+    .unsplash-form {
+        width: 60%;
+    }
 }

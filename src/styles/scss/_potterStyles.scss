@@ -16,7 +16,7 @@
         }
         & p {
             color: #787878;
-            font-family: "ITC Officina Serif";
+            font-family: 'ITC Officina Serif';
             font-size: 17px;
             font-weight: 300;
             line-height: 25px;
@@ -24,7 +24,7 @@
         }
         & .house-image {
             width: 65px;
-            height:30px;
+            height: 30px;
         }
     }
     & .potter-character-details {
@@ -38,12 +38,28 @@
             margin: 0;
             font-size: 25px;
             font-weight: 700;
-            color:  #e0aa40
+            color: #e0aa40;
         }
         & .potter-value {
             margin-left: 40px;
             font-size: 17px;
         }
     }
+}
 
+@media (max-width: 768px) {
+    .potter-route {
+        .ui.pagination.menu .item {
+            min-width: 0;
+        }
+        .css-jrs7nr-control {
+            width: 55%;
+        }
+        .css-mvqqzp-menu {
+            width: 55%;
+        }
+        .css-b7jmx5-control {
+            width: 55%;
+        }
+    }
 }

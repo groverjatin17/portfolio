@@ -8,11 +8,23 @@ import Cards from './Cards';
 import SideProjects from './SideProjects';
 import workformoney from '../../assets/images/workformoney.gif';
 import SocialMedia from './SocialMedia.js';
+import { setMediaDevice } from '../../actions/actions_info';
 
 class Layout extends Component {
     constructor(props) {
         super(props);
         this.titleRef = createRef();
+    }
+
+    componentDidMount() {
+        const { addMediaDevice } = this.props;
+        if (
+            /Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(
+                navigator.userAgent
+            )
+        ) {
+            addMediaDevice('mobile');
+        }
     }
 
     scrollToTitleRef = () =>
@@ -55,9 +67,12 @@ class Layout extends Component {
     }
 }
 
+const mapDispatchToProps = (dispatch) => ({
+    addMediaDevice: (device) => dispatch(setMediaDevice(device)),
+});
 const mapStateToProps = ({ reducerInfo, potterReducer }) => ({
     reducerInfo,
     potterReducer,
 });
 
-export default connect(mapStateToProps)(Layout);
+export default connect(mapStateToProps, mapDispatchToProps)(Layout);

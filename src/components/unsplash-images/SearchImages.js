@@ -10,26 +10,26 @@ function SearchImage(props) {
 
     const renderImages = () => {
         if (_.isEmpty(searchedImages)) {
-        } else {
-            return searchedImages.results.map((item) => {
-                const downloadLink = `https://unsplash.com/photos/${item.id}/download?force=true`;
-                return (
-                    <div className='unsplash-img' key={item.id}>
-                        <img src={item.urls.regular} alt={item.id} />
-                        <div className='overlay'>
-                            <p>{item.user.name}</p>
-                            <a href={downloadLink} download>
-                                <FiDownload
-                                    className='download'
-                                    size='2em'
-                                    color='beige'
-                                />
-                            </a>
-                        </div>
-                    </div>
-                );
-            });
+            return null;
         }
+        return searchedImages.results.map((item) => {
+            const downloadLink = `https://unsplash.com/photos/${item.id}/download?force=true`;
+            return (
+                <div className='unsplash-img' key={item.id}>
+                    <img src={item.urls.regular} alt={item.id} />
+                    <div className='overlay'>
+                        <p>{item.user.name}</p>
+                        <a href={downloadLink} download>
+                            <FiDownload
+                                className='download'
+                                size='2em'
+                                color='beige'
+                            />
+                        </a>
+                    </div>
+                </div>
+            );
+        });
     };
 
     return (

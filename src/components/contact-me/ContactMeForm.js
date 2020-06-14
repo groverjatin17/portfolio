@@ -3,6 +3,7 @@ import { Formik } from 'formik';
 import { MdError } from 'react-icons/md';
 import { Popup } from 'semantic-ui-react';
 import { injectIntl } from 'react-intl';
+import { connect } from 'react-redux';
 
 import validationSchema from './ValidationSchema';
 
@@ -17,20 +18,9 @@ function ErrorPopup(props) {
     );
 }
 function ContactMeForm(props) {
-    const [deviceType, setDeviceType] = useState(null);
-
-    useEffect(() => {
-        if (
-            /Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(
-                navigator.userAgent
-            )
-        ) {
-            setDeviceType('mobile');
-        }
-    }, []);
-
     const displayError = (errorName) => {
-        if (deviceType === 'mobile') {
+        const { mediaDevice } = props;
+        if (mediaDevice === 'mobile') {
             return <p>{errorName}</p>;
         }
         return <ErrorPopup error={errorName} />;
@@ -136,4 +126,8 @@ function ContactMeForm(props) {
     );
 }
 
-export default injectIntl(ContactMeForm);
+const mapStateToProps = ({ reducerInfo }) => ({
+    mediaDevice: reducerInfo.mediaDevice,
+});
+
+export default connect(mapStateToProps)(injectIntl(ContactMeForm));

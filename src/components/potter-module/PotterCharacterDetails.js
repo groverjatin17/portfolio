@@ -31,9 +31,9 @@ export default class PotterCharacterDetails extends Component {
         return (
             <Segment className='potter-character-details'>
                 <Grid>
-                    <h1>Harry Potter</h1>
-                    <p> Hogwart scholl of wizardry</p>
-                    <p>Gryffindor</p>
+                    <h1>{characterDetails.name && characterDetails.name}</h1>
+                    <p>{characterDetails.school && characterDetails.school}</p>
+                    <p>{characterDetails.house && characterDetails.house}</p>
                     <Grid.Row columns={3}>
                         <CharacterFeature
                             icon={CHARACTER_IMAGES.WAND}

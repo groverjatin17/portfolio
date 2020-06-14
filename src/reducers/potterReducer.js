@@ -1,7 +1,7 @@
 import { POTTERCHARACTERS } from '../actions/actions_info.js';
 
 const initialState = {
-    potterCharacters: [],
+    potterCharacters: { loading: true, data: [] },
 };
 
 export default function (state = initialState, action) {

@@ -10,6 +10,7 @@ export const POTTERCHARACTERS = 'POTTERCHARACTERS';
 export const RANDOM_IMAGE = 'RANDOM_IMAGE';
 export const SEARCHED_IMAGES = 'SEARCHED_IMAGES';
 export const SEARCH_QUERY = 'SEARCH_QUERY';
+export const MEDIA_DEVICE = 'MEDIA_DEVICE';
 
 export function setLocale(value) {
     return function (dispatch) {
@@ -28,6 +29,14 @@ export function toggleSidebar() {
     };
 }
 
+export function setMediaDevice(device) {
+    return function (dispatch) {
+        dispatch({
+            type: MEDIA_DEVICE,
+            payload: device,
+        });
+    };
+}
 export function getHarryPotterCharacters() {
     return function (dispatch) {
         fetch(
@@ -40,7 +49,7 @@ export function getHarryPotterCharacters() {
             .then((json) => {
                 dispatch({
                     type: POTTERCHARACTERS,
-                    payload: json,
+                    payload: { loading: false, data: json },
                 });
             })
             .catch(console.error());

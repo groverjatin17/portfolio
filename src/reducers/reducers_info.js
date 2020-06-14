@@ -1,8 +1,13 @@
-import { LOCALE, TOGGLE_SIDEBAR } from '../actions/actions_info.js';
+import {
+    LOCALE,
+    TOGGLE_SIDEBAR,
+    MEDIA_DEVICE,
+} from '../actions/actions_info.js';
 
 const initialState = {
     locale: 'en-US',
     showHideSidebar: false,
+    mediaDevice: '',
 };
 
 export default function (state = initialState, action) {
@@ -16,6 +21,11 @@ export default function (state = initialState, action) {
             return {
                 ...state,
                 showHideSidebar: !state.showHideSidebar,
+            };
+        case MEDIA_DEVICE:
+            return {
+                ...state,
+                mediaDevice: action.payload,
             };
         default:
             return state;

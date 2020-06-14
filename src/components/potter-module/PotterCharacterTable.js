@@ -1,8 +1,9 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
-import { Icon, Label, Table, Pagination } from 'semantic-ui-react';
+import { Label, Table, Pagination } from 'semantic-ui-react';
 import _ from 'lodash';
 import { IoIosColorWand } from 'react-icons/io';
+import PinkLoader from '../common/components/lottie-animations/PinkLoader';
 
 import {
     TABLE_HEADER,
@@ -31,11 +32,15 @@ let numberOfPages = 0;
 class PotterCharacterTable extends Component {
     constructor(props) {
         super(props);
-        this.state = { activePage: 1 };
+        this.state = {
+            activePage: 1,
+        };
     }
 
     renderTableRows = () => {
-        const { potterCharacters } = this.props;
+        const {
+            potterCharacters: { data: potterCharacters, loading },
+        } = this.props;
         const { activePage } = this.state;
 
         const renderedHouse = (house) => {
@@ -166,34 +171,51 @@ class PotterCharacterTable extends Component {
     };
 
     render() {
+        const {
+            mediaDevice,
+            potterCharacters: { loading },
+        } = this.props;
         return (
             <>
-                <div className='potter-table'>
-                    <Table selectable striped>
-                        <Table.Header>
-                            <Table.Row>
-                                {Object.keys(TABLE_HEADER).map((key, idx) => (
-                                    <Table.HeaderCell key={idx}>
-                                        {TABLE_HEADER[key]}
-                                    </Table.HeaderCell>
-                                ))}
-                            </Table.Row>
-                        </Table.Header>
+                {loading ? (
+                    <PinkLoader />
+                ) : (
+                    <>
+                        <div className='potter-table'>
+                            <Table selectable striped>
+                                <Table.Header>
+                                    <Table.Row>
+                                        {Object.keys(TABLE_HEADER).map(
+                                            (key, idx) => (
+                                                <Table.HeaderCell key={idx}>
+                                                    {TABLE_HEADER[key]}
+                                                </Table.HeaderCell>
+                                            )
+                                        )}
+                                    </Table.Row>
+                                </Table.Header>
 
-                        <Table.Body>{this.renderTableRows()}</Table.Body>
-                    </Table>
-                </div>
-                <center>
-                    <Pagination
-                        defaultActivePage={1}
-                        pointing
-                        secondary
-                        totalPages={numberOfPages}
-                        onPageChange={(_, { activePage }) => {
-                            this.setState({ activePage });
-                        }}
-                    />
-                </center>
+                                <Table.Body>
+                                    {this.renderTableRows()}
+                                </Table.Body>
+                            </Table>
+                        </div>
+                        <center>
+                            <Pagination
+                                firstItem={mediaDevice === 'mobile' && null}
+                                lastItem={mediaDevice === 'mobile' && null}
+                                boundaryRange={mediaDevice === 'mobile' ? 0 : 1}
+                                defaultActivePage={1}
+                                pointing
+                                secondary
+                                totalPages={numberOfPages || 1}
+                                onPageChange={(_, { activePage }) => {
+                                    this.setState({ activePage });
+                                }}
+                            />
+                        </center>
+                    </>
+                )}
             </>
         );
     }
@@ -201,6 +223,7 @@ class PotterCharacterTable extends Component {
 
 const mapStateToProps = (state) => ({
     potterCharacters: state.potterReducer.potterCharacters,
+    mediaDevice: state.reducerInfo.mediaDevice,
 });
 
 export default connect(mapStateToProps)(PotterCharacterTable);
