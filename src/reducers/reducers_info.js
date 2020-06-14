@@ -1,8 +1,8 @@
-import { LOCALE } from '../actions/actions_info.js';
+import { LOCALE, TOGGLE_SIDEBAR } from '../actions/actions_info.js';
 
 const initialState = {
     locale: 'en-US',
-    albumDetails: [],
+    showHideSidebar: false,
 };
 
 export default function (state = initialState, action) {
@@ -11,6 +11,11 @@ export default function (state = initialState, action) {
             return {
                 ...state,
                 locale: action.payload,
+            };
+        case TOGGLE_SIDEBAR:
+            return {
+                ...state,
+                showHideSidebar: !state.showHideSidebar,
             };
         default:
             return state;

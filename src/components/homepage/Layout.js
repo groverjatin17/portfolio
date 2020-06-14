@@ -23,7 +23,7 @@ class Layout extends Component {
             <>
                 <Hero scrollIntoView={this.scrollToTitleRef} />
                 <div className='layout'>
-                    <Divider horizontal style={{ margin: '30px 0px 10px 0' }}>
+                    <Divider horizontal className='section-divider'>
                         <h1 className='section-title'>
                             <FormattedMessage
                                 id='heading.techStack'
@@ -32,7 +32,7 @@ class Layout extends Component {
                         </h1>
                     </Divider>
                     <Cards />
-                    <Divider horizontal style={{ margin: '30px 0px 10px 0' }}>
+                    <Divider horizontal className='section-divider'>
                         <h1 className='section-title' ref={this.titleRef}>
                             <FormattedMessage
                                 id='heading.myProjects'

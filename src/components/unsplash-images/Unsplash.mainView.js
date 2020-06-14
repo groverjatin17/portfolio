@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { FormattedMessage } from 'react-intl';
-
 import { Tab } from 'semantic-ui-react';
 import _ from 'lodash';
 
@@ -15,6 +14,7 @@ import SearchImages from './SearchImages';
 import RandomWallpaper from './RandomWallpaper';
 import PinkLoader from '../common/components/lottie-animations/PinkLoader';
 import NavigationBar from '../NavigationBar';
+import Sidebar from '../common/components/Sidebar';
 
 function UnsplashMainView(props) {
     const {
@@ -61,6 +61,7 @@ function UnsplashMainView(props) {
                     />
                 ),
             },
+            // eslint-disable-next-line react/display-name
             render: () => (
                 <Tab.Pane>
                     <SearchImages
@@ -81,6 +82,7 @@ function UnsplashMainView(props) {
                     />
                 ),
             },
+            // eslint-disable-next-line react/display-name
             render: () => (
                 <Tab.Pane>
                     {_.isEmpty(randomImage) ? (
@@ -97,11 +99,11 @@ function UnsplashMainView(props) {
     ];
 
     return (
-        <div>
+        <Sidebar>
             <NavigationBar theme='dark' />
             <br />
             <Tab panes={panes} />
-        </div>
+        </Sidebar>
     );
 }
 

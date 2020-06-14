@@ -6,7 +6,7 @@ import NavigationBar from '../NavigationBar';
 import { getHarryPotterCharacters } from '../../actions/actions_info';
 import PotterCharacterSearch from './PotterCharacterSearch';
 import PotterCharacterDetails from './PotterCharacterDetails';
-import '../../styles/scss/index.scss';
+import Sidebar from '../common/components/Sidebar';
 
 const PotterCharacterTable = lazy(() => import('./PotterCharacterTable'));
 
@@ -57,7 +57,7 @@ class PotterPage extends Component {
     render() {
         const characterDetails = this.getSelectedCharacter();
         return (
-            <>
+            <Sidebar>
                 <NavigationBar theme='dark' />
                 <div className='potter-route'>
                     <h1 className='potter-title'>Harry Potter</h1>
@@ -75,7 +75,7 @@ class PotterPage extends Component {
                         <PotterCharacterTable />
                     </Suspense>
                 </div>
-            </>
+            </Sidebar>
         );
     }
 }

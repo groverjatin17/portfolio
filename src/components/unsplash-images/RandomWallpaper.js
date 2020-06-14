@@ -1,6 +1,5 @@
 import React from 'react';
 import { MdRefresh } from 'react-icons/md';
-import '../../styles/scss/index.scss';
 
 export default function RandomWallpaper({
     randomImageObject,

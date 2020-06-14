@@ -11,8 +11,6 @@ import {
 import TipJar from '../../assets/images/tip-jar.png';
 import IndianHead from '../common/components/lottie-animations/IndianHead';
 
-import '../../styles/scss/index.scss';
-
 export default class SocialMedia extends Component {
     render() {
         return (

@@ -5,11 +5,10 @@ import { Card, CardImage, Title } from '../../styles/Card.style';
 const CardMaker = ({ rating, image, title }) => (
     <Card>
         <Rating
+            className='tech-rating'
             defaultRating={rating}
             maxRating={5}
             icon='star'
-            className='tech-rating'
-            // style={{ float: 'right', margin: '5% 0% 0% 62%' }}
             disabled
         />
         <CardImage src={image} alt='Loading...' />

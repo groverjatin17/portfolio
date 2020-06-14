@@ -3,6 +3,7 @@ import { Grid } from 'semantic-ui-react';
 import NavigationBar from '../NavigationBar';
 import MapBox from './MapBox';
 import D3 from './D3';
+import Sidebar from '../common/components/Sidebar';
 
 const compArray = [
     {
@@ -34,10 +35,9 @@ export default class Miscellaneous extends Component {
     };
 
     render() {
-        console.log(this.props);
         const { activeComponent } = this.state;
         return (
-            <>
+            <Sidebar>
                 <NavigationBar theme='dark' />
 
                 <Grid style={{ margin: '10px', height: '89vh' }}>
@@ -69,7 +69,7 @@ export default class Miscellaneous extends Component {
                         {activeComponent}
                     </Grid.Column>
                 </Grid>
-            </>
+            </Sidebar>
         );
     }
 }

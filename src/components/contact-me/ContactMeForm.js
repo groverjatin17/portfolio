@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Formik } from 'formik';
 import { MdError } from 'react-icons/md';
 import { Popup } from 'semantic-ui-react';
@@ -17,6 +17,25 @@ function ErrorPopup(props) {
     );
 }
 function ContactMeForm(props) {
+    const [deviceType, setDeviceType] = useState(null);
+
+    useEffect(() => {
+        if (
+            /Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(
+                navigator.userAgent
+            )
+        ) {
+            setDeviceType('mobile');
+        }
+    }, []);
+
+    const displayError = (errorName) => {
+        if (deviceType === 'mobile') {
+            return <p>{errorName}</p>;
+        }
+        return <ErrorPopup error={errorName} />;
+    };
+
     return (
         <div>
             <Formik
@@ -28,7 +47,6 @@ function ContactMeForm(props) {
                         resetForm();
                         setSubmitting(false);
                     }, 2000);
-                    console.log('ContactMe -> render -> values', values);
                 }}
             >
                 {({
@@ -56,10 +74,9 @@ function ContactMeForm(props) {
                                     defaultMessage: 'Enter your Name',
                                 })}
                             />
-                            &nbsp;
-                            {touched.name && errors.name ? (
-                                <ErrorPopup error={errors.name} />
-                            ) : null}
+                            {touched.name && errors.name
+                                ? displayError(errors.name)
+                                : null}
                         </div>
                         <div>
                             <input
@@ -78,10 +95,9 @@ function ContactMeForm(props) {
                                     defaultMessage: "What's your email?",
                                 })}
                             />
-                            &nbsp;
-                            {touched.email && errors.email ? (
-                                <ErrorPopup error={errors.email} />
-                            ) : null}
+                            {touched.email && errors.email
+                                ? displayError(errors.email)
+                                : null}
                         </div>
                         <div>
                             <textarea
@@ -99,13 +115,13 @@ function ContactMeForm(props) {
                                     defaultMessage: 'Your Questions...',
                                 })}
                             />
-                            &nbsp;
-                            {touched.query && errors.query ? (
-                                <ErrorPopup error={errors.query} />
-                            ) : null}
+
+                            {touched.query && errors.query
+                                ? displayError(errors.query)
+                                : null}
                         </div>
 
-                        <div style={{ width: '430px' }}>
+                        <div>
                             <button type='submit' disabled={isSubmitting}>
                                 {props.intl.formatMessage({
                                     id: 'contactme.submitButton',

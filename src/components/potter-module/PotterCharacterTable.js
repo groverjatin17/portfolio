@@ -10,7 +10,6 @@ import {
     HOUSE_IMAGES,
     HOUSE_NAMES,
 } from '../common/global-constants/PotterPage.consts';
-import '../../styles/scss/index.scss';
 
 const WAND_LENGTH = [',12 1/4"', ',15', ',9 1/2"', ',10 3/4'];
 const WAND_TYPES = [

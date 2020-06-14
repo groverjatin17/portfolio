@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
-import { FormattedMessage } from 'react-intl';
-import { Dropdown } from 'semantic-ui-react';
+import { FormattedMessage, injectIntl } from 'react-intl';
+import { Dropdown, Button, Icon } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 
-import { setLocale } from '../actions/actions_info';
-
-import '../styles/scss/index.scss';
+import { setLocale, toggleSidebar } from '../actions/actions_info';
 
 let style = {};
 const languageOptions = [
@@ -16,7 +14,12 @@ const languageOptions = [
 
 class NavigationBar extends Component {
     render() {
-        const { theme, setLocaleLanguage } = this.props;
+        const {
+            theme,
+            setLocaleLanguageAction,
+            toggleSidebarAction,
+        } = this.props;
+        const { intl } = this.props;
 
         if (theme === 'dark') {
             style = {
@@ -33,7 +36,7 @@ class NavigationBar extends Component {
                     <p className='logo'>Jatin Grover</p>
                 </NavLink>
                 <nav>
-                    <ul style={{ display: 'inline-block' }}>
+                    <ul>
                         <li>
                             <NavLink to='/misc' className='link'>
                                 <FormattedMessage
@@ -74,18 +77,19 @@ class NavigationBar extends Component {
                                 labeled
                                 icon='world'
                                 options={languageOptions}
-                                text={
-                                    <FormattedMessage
-                                        id='navbar.language'
-                                        defaultMessage='Language'
-                                    />
-                                }
+                                text={intl.formatMessage({
+                                    id: 'navbar.language',
+                                    defaultMessage: 'Language',
+                                })}
                                 onChange={(e, data) => {
-                                    setLocaleLanguage(data.value);
+                                    setLocaleLanguageAction(data.value);
                                 }}
                             />
                         </li>
                     </ul>
+                    <Button onClick={toggleSidebarAction}>
+                        <Icon name='sidebar' fitted />
+                    </Button>
                 </nav>
             </div>
         );
@@ -97,6 +101,10 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-    setLocaleLanguage: (value) => dispatch(setLocale(value)),
+    setLocaleLanguageAction: (value) => dispatch(setLocale(value)),
+    toggleSidebarAction: () => dispatch(toggleSidebar()),
 });
-export default connect(mapStateToProps, mapDispatchToProps)(NavigationBar);
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(injectIntl(NavigationBar));

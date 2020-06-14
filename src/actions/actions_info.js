@@ -5,6 +5,7 @@ import {
 } from '../styles/apiKeys';
 
 export const LOCALE = 'LOCALE';
+export const TOGGLE_SIDEBAR = 'TOGGLE_SIDEBAR';
 export const POTTERCHARACTERS = 'POTTERCHARACTERS';
 export const RANDOM_IMAGE = 'RANDOM_IMAGE';
 export const SEARCHED_IMAGES = 'SEARCHED_IMAGES';
@@ -15,6 +16,14 @@ export function setLocale(value) {
         dispatch({
             type: LOCALE,
             payload: value,
+        });
+    };
+}
+
+export function toggleSidebar() {
+    return function (dispatch) {
+        dispatch({
+            type: TOGGLE_SIDEBAR,
         });
     };
 }

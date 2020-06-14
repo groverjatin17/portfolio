@@ -13,12 +13,13 @@ import {
 } from '../../styles/Hero.style';
 
 import NavigationBar from '../NavigationBar';
+import Sidebar from '../common/components/Sidebar';
 
 export default class Hero extends Component {
     render() {
         const { scrollIntoView } = this.props;
         return (
-            <>
+            <Sidebar>
                 <Container className='top-panel'>
                     <ImageOverlay>
                         <ImageCenterDiv>
@@ -44,7 +45,7 @@ export default class Hero extends Component {
                     <NavigationBar />
                     <Giphy src={giphy} alt='Loading...' />
                 </Container>
-            </>
+            </Sidebar>
         );
     }
 }
