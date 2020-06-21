@@ -1,6 +1,6 @@
 import React, { Component, createRef } from 'react';
 import { FormattedMessage } from 'react-intl';
-import { Divider } from 'semantic-ui-react';
+import { Divider, Grid, Icon, Image, List } from 'semantic-ui-react';
 
 import { connect } from 'react-redux';
 import Hero from './Hero';
@@ -10,6 +10,14 @@ import workformoney from '../../assets/images/workformoney.gif';
 import SocialMedia from './SocialMedia.js';
 import { setMediaDevice } from '../../actions/actions_info';
 
+const interestsList = [
+    'Mixed Martial Arts',
+    'Backpacking',
+    'Badminton/Working out',
+    'Reading books',
+    'Sketching Portraits',
+    'Bhangra-Punjabi Folk Dance',
+];
 class Layout extends Component {
     constructor(props) {
         super(props);
@@ -53,13 +61,27 @@ class Layout extends Component {
                         </h1>
                     </Divider>
                     <SideProjects />
-                    <div>
-                        <img
-                            src={workformoney}
-                            alt='Loading...'
-                            style={{ maxWidth: '100%' }}
-                        />
-                    </div>
+                    <Grid>
+                        <Grid.Row columns='2'>
+                            <Grid.Column>
+                                <Image src={workformoney} />
+                            </Grid.Column>
+                            <Grid.Column>
+                                <div>
+                                    <h1>Co-curricular interests</h1>
+                                    {interestsList.map((item) => (
+                                        <List>
+                                            <Icon
+                                                name='angle right'
+                                                size='large'
+                                            />
+                                            <List.Content>{item}</List.Content>
+                                        </List>
+                                    ))}
+                                </div>
+                            </Grid.Column>
+                        </Grid.Row>
+                    </Grid>
                     <SocialMedia />
                 </div>
             </>

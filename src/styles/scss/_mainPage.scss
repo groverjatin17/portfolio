@@ -72,6 +72,26 @@
         float: right;
         margin: 5% 0% 0% 62%;
     }
+
+    .ui.grid > [class*='two column'].row > .column > div {
+        background-color: #e3bebb;
+        height: 100%;
+        width: 100%;
+        background-clip: content-box;
+        padding: 20px;
+
+        .ui.list {
+            padding-left: 15px;
+
+            > .content {
+                display: inline-block;
+            }
+        }
+
+        .ui.list:hover {
+            transform: scale(1.01);
+        }
+    }
 }
 
 .section-divider {
@@ -214,6 +234,20 @@
         margin: 0;
         & .tech-rating {
             margin: 5% 0 0 0;
+        }
+        .ui.grid > [class*='two column'].row > .column {
+            width: 100% !important;
+
+            div {
+                margin: 0 10px 10px 13px;
+                height: auto;
+                width: auto;
+                padding: 0px;
+
+                .ui.list > .content {
+                    display: inline-block;
+                }
+            }
         }
     }
 

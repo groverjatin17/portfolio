@@ -52,7 +52,7 @@ class PotterCharacterSearch extends Component {
 }
 
 const mapStateToProps = (state) => ({
-    potterCharacters: state.potterReducer.potterCharacters,
+    potterCharacters: state.potterReducer.potterCharacters.data,
 });
 
 export default connect(mapStateToProps)(PotterCharacterSearch);
