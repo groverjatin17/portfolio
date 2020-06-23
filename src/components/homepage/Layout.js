@@ -70,7 +70,7 @@ class Layout extends Component {
                                 <div>
                                     <h1>Co-curricular interests</h1>
                                     {interestsList.map((item) => (
-                                        <List>
+                                        <List key={item}>
                                             <Icon
                                                 name='angle right'
                                                 size='large'

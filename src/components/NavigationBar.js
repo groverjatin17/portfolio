@@ -10,6 +10,7 @@ let style = {};
 const languageOptions = [
     { key: 'English', text: 'English', value: 'en-US' },
     { key: 'Hindi', text: 'Hindi', value: 'hi-IN' },
+    { key: 'Punjabi', text: 'Punjabi', value: 'pa-IN' },
 ];
 
 class NavigationBar extends Component {

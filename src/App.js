@@ -5,7 +5,6 @@ import { IntlProvider } from 'react-intl';
 
 import Layout from './components/homepage/Layout';
 import History from './components/History';
-
 import Miscellaneous from './components/miscellaneous/Misc.mainView';
 import ProjectDescription from './components/project-description-module/ProjectDescription';
 import ContactMe from './components/contact-me/ContactMe.mainView';
@@ -14,6 +13,7 @@ import Unsplash from './components/unsplash-images/Unsplash.mainView';
 
 import English from './assets/locale/en-US.json';
 import Hindi from './assets/locale/hi-IN.json';
+import Punjabi from './assets/locale/pa-IN.json';
 
 import './styles/scss/react-transitions.scss';
 
@@ -28,6 +28,9 @@ class App extends Component {
                 break;
             case 'hi-IN':
                 language = Hindi;
+                break;
+            case 'pa-IN':
+                language = Punjabi;
                 break;
             default:
                 language = English;
