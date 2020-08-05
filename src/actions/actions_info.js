@@ -1,8 +1,4 @@
 // This file contains actions for this project
-import {
-    REACT_APP_POTTER_API_KEY,
-    REACT_APP_UNSPLASH_API_KEY,
-} from '../styles/apiKeys';
 
 export const LOCALE = 'LOCALE';
 export const TOGGLE_SIDEBAR = 'TOGGLE_SIDEBAR';
@@ -39,8 +35,10 @@ export function setMediaDevice(device) {
 }
 export function getHarryPotterCharacters() {
     return function (dispatch) {
+        console.log('potterapikey', process.env);
+
         fetch(
-            `https://www.potterapi.com/v1/characters?key=${REACT_APP_POTTER_API_KEY}`,
+            `https://www.potterapi.com/v1/characters?key=$2a$10$FAmRL8kl${process.env.REACT_APP_POTTER_API_KEY}`,
             {
                 method: 'GET',
             }
@@ -59,7 +57,7 @@ export function getHarryPotterCharacters() {
 export function getRandomImage() {
     return function (dispatch) {
         fetch(
-            `https://api.unsplash.com/photos/random?client_id=${REACT_APP_UNSPLASH_API_KEY}&orientation=landscape`,
+            `https://api.unsplash.com/photos/random?client_id=${process.env.REACT_APP_UNSPLASH_API_KEY}&orientation=landscape`,
             {
                 method: 'GET',
             }
@@ -78,7 +76,7 @@ export function getRandomImage() {
 export function getImagesOnSearch(query, page) {
     return function (dispatch) {
         fetch(
-            `https://api.unsplash.com/search/photos?client_id=${REACT_APP_UNSPLASH_API_KEY}` +
+            `https://api.unsplash.com/search/photos?client_id=${process.env.REACT_APP_UNSPLASH_API_KEY}` +
                 `&query=${query}` +
                 `&page=${page}` +
                 `&per_page=9` +
