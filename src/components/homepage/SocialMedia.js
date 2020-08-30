@@ -10,6 +10,7 @@ import {
 
 import TipJar from '../../assets/images/tip-jar.png';
 import IndianHead from '../common/components/lottie-animations/IndianHead';
+import StripeCheckoutButton from '../stripe-button/stripe-button.component';
 
 export default class SocialMedia extends Component {
     render() {
@@ -60,7 +61,7 @@ export default class SocialMedia extends Component {
                         </p>
 
                         <center>
-                            <button
+                            {/* <button
                                 type='button'
                                 className=''
                                 onClick={() => {
@@ -71,7 +72,8 @@ export default class SocialMedia extends Component {
                                     id='footer.donateButton'
                                     defaultMessage='DONATE'
                                 />
-                            </button>
+                            </button> */}
+                            <StripeCheckoutButton price={5} />
                         </center>
                     </div>
                 </div>
