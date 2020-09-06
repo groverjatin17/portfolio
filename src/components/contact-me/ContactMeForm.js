@@ -7,6 +7,8 @@ import { connect } from 'react-redux';
 
 import validationSchema from './ValidationSchema';
 
+const axios = require('axios');
+
 function ErrorPopup(props) {
     const { error } = props;
     return (
@@ -32,11 +34,19 @@ function ContactMeForm(props) {
                 initialValues={{ name: '', email: '', query: '' }}
                 validationSchema={validationSchema()}
                 onSubmit={(values, { setSubmitting, resetForm }) => {
+                    const { name, email, query } = values;
                     setSubmitting(true);
-                    setTimeout(() => {
-                        resetForm();
-                        setSubmitting(false);
-                    }, 2000);
+                    axios
+                        .post('http://localhost:8080/api/sendMail', {
+                            name,
+                            email,
+                            message: query,
+                        })
+                        .then((response) => console.log(response))
+                        .then(() => {
+                            resetForm();
+                            setSubmitting(false);
+                        });
                 }}
             >
                 {({
