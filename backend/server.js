@@ -10,15 +10,16 @@ require('dotenv').config();
 const app = express();
 
 const oauth2Client = new OAuth2(
-    '151424667116-l12fk4fmr93aefuan1d2kqbs5olagf7b.apps.googleusercontent.com',
-    'FCFCSVYON8TLUDYnnuwc0hkG',
-    'https://developers.google.com/oauthplayground'
+    process.env.CLIENT_ID,
+    process.env.CLIENT_SECRET,
+    process.env.REFRESH_TOKEN
 );
 
 oauth2Client.setCredentials({
-    refresh_token:
-        '1//04l26ngtvhXGPCgYIARAAGAQSNwF-L9Irb1PjVan8hKOCUUDU7W9SoTNzI5d9ttO6SZqEQBldCvRzX0pMXaysD2VtGTRWulWedmE',
+    refresh_token: process.env.REFRESH_TOKEN,
 });
+
+// The above oauthclient is used to get the accesstoken that is valid for 3600 seconds.
 const accessToken = oauth2Client.getAccessToken();
 
 const transporter = nodemailer.createTransport({
@@ -32,14 +33,6 @@ const transporter = nodemailer.createTransport({
         accessToken,
     },
 });
-
-// const transporter = nodemailer.createTransport({
-//     service: 'Gmail',
-//     auth: {
-//         user: process.env.EMAIL,
-//         pass: process.env.PASSWORD,
-//     },
-// });
 
 transporter.verify(function (error, success) {
     if (error) {
@@ -69,7 +62,7 @@ app.post('/api/sendMail', (req, res) => {
             res.send(`We are facing this Error: ${err}`);
         } else {
             console.log('LOG: Mail sent Successfully 🚀');
-            res.send('Mail sent successfully. Check Inbox');
+            res.send('Mail sent successfully. Check Inbox!!');
         }
     });
 });
