@@ -37,11 +37,14 @@ function ContactMeForm(props) {
                     const { name, email, query } = values;
                     setSubmitting(true);
                     axios
-                        .post('http://localhost:8080/api/sendMail', {
-                            name,
-                            email,
-                            message: query,
-                        })
+                        .post(
+                            'https://quiet-retreat-05396.herokuapp.com/api/sendMail',
+                            {
+                                name,
+                                email,
+                                message: query,
+                            }
+                        )
                         .then((response) => console.log(response))
                         .then(() => {
                             resetForm();
