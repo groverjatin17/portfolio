@@ -4,8 +4,7 @@ import { FormattedMessage } from 'react-intl';
 
 const StripeCheckoutButton = ({ price }) => {
     const priceForStripe = price * 100;
-    const publishableKey =
-        'pk_test_51HLfecEhqCdcGpxn8MqnGeAlHZMkUpr03vhhMQqU5gwV3LkLqfrbIlRuijJif3YyXPFwcyaD96Q68rgeo10b410a004jy0lv2V';
+    const publishableKey = process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY;
 
     const onToken = (token) => {
         console.log(token);

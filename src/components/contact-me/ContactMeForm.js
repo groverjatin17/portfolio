@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Formik } from 'formik';
 import { MdError } from 'react-icons/md';
 import { Popup } from 'semantic-ui-react';

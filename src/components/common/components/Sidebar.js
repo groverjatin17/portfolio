@@ -1,5 +1,5 @@
 import React from 'react';
-import { Dropdown, Menu, Segment, Sidebar } from 'semantic-ui-react';
+import { Dropdown, Menu, Sidebar } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { injectIntl } from 'react-intl';

@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Label, Table, Pagination } from 'semantic-ui-react';
 import _ from 'lodash';
@@ -39,7 +39,7 @@ class PotterCharacterTable extends Component {
 
     renderTableRows = () => {
         const {
-            potterCharacters: { data: potterCharacters, loading },
+            potterCharacters: { data: potterCharacters },
         } = this.props;
         const { activePage } = this.state;
 
