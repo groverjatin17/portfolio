@@ -1,19 +1,18 @@
 import React from 'react';
 import StripeCheckout from 'react-stripe-checkout';
-import { FormattedMessage } from 'react-intl';
+import { injectIntl } from 'react-intl';
 import axios from 'axios';
 
-const StripeCheckoutButton = ({ price }) => {
+const StripeCheckoutButton = ({ price, intl }) => {
     const priceForStripe = price * 100;
     const publishableKey = process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY;
-    console.log('StripeCheckoutButton -> process.env', process.env);
 
     const onToken = (token) => {
         // The token includes all the info such as credit card info. The amount to be deducted etc.
         console.log(token);
 
         axios({
-            url: 'http://localhost:8080/payment',
+            url: 'payment',
             method: 'post',
             data: {
                 amount: priceForStripe,
@@ -32,18 +31,16 @@ const StripeCheckoutButton = ({ price }) => {
 
     return (
         <StripeCheckout
-            label={
-                <FormattedMessage
-                    id='footer.donateButton'
-                    defaultMessage='DONATE'
-                />
-            }
+            label={intl.formatMessage({
+                id: 'footer.donateButton',
+                defaultMessage: 'DONATE',
+            })}
             name='Thank you'
             billingAddress
             shippingAddress
             image='http://www.svgshare.com/i/CUz.svg'
             description={`You are contributing $${price}`}
-            currency='inr'
+            currency='INR'
             amount={priceForStripe}
             panelLabel='Pay Now'
             token={onToken}
@@ -52,4 +49,4 @@ const StripeCheckoutButton = ({ price }) => {
     );
 };
 
-export default StripeCheckoutButton;
+export default injectIntl(StripeCheckoutButton);

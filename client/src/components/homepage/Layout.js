@@ -39,7 +39,6 @@ class Layout extends Component {
         this.titleRef.current.scrollIntoView({ behavior: 'smooth' });
 
     render() {
-        console.log('process.envs ', process.env);
         return (
             <>
                 <Hero scrollIntoView={this.scrollToTitleRef} />

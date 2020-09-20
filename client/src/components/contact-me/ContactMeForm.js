@@ -37,7 +37,7 @@ function ContactMeForm(props) {
                     const { name, email, query } = values;
                     setSubmitting(true);
                     axios
-                        .post('http://localhost:8080/api/sendMail', {
+                        .post('api/sendMail', {
                             name,
                             email,
                             message: query,
