@@ -59,20 +59,7 @@ export default class SocialMedia extends Component {
                                 }}
                             />
                         </p>
-
                         <center>
-                            {/* <button
-                                type='button'
-                                className=''
-                                onClick={() => {
-                                    console.log('do  this');
-                                }}
-                            >
-                                <FormattedMessage
-                                    id='footer.donateButton'
-                                    defaultMessage='DONATE'
-                                />
-                            </button> */}
                             <StripeCheckoutButton price={5} />
                         </center>
                     </div>
