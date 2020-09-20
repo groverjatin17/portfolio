@@ -6,12 +6,13 @@ const { google } = require('googleapis');
 const path = require('path')
 const { OAuth2 } = google.auth;
 
-const PORT = process.env.PORT || 8080;
 
 if (process.env.NODE_ENV !== 'production') {
     // eslint-disable-next-line global-require
     require('dotenv').config();
 }
+
+const PORT = process.env.PORT || 8080;
 
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
