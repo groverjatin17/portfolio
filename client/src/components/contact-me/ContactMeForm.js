@@ -46,7 +46,21 @@ function ContactMeForm(props) {
                         .then(() => {
                             resetForm();
                             setSubmitting(false);
-                        });
+                        })
+                        .catch((error) =>
+                            console.error('Error sending mail ', error)
+                        );
+
+                    axios
+                        .post('api/sendSMS', {
+                            name,
+                            email,
+                            message: query,
+                        })
+                        .then((response) => console.log(response))
+                        .catch((error) =>
+                            console.error('Error sending SMS ', error)
+                        );
                 }}
             >
                 {({

@@ -15,6 +15,7 @@ if (process.env.NODE_ENV !== 'production') {
 const PORT = process.env.PORT || 8080;
 
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
+const twilioClient = require("twilio")(process.env.TWILIO_ACCOUNT_SID, process.env.TWILIO_AUTH_TOKEN_);
 
 //So what is happening is that OAuthclient uses clientId, clientSecret and refreshToken to generate access Token
 const oauth2Client = new OAuth2(
@@ -51,6 +52,7 @@ transporter.verify(function (error, success) {
         console.log('Transporter verified successfully ✅ ', success);
     }
 });
+
 //generating express instance
 const app = express();
 
@@ -110,6 +112,27 @@ app.post('/payment', (req, res) => {
     })
 });
 
+//API to send message via twilio
+app.post("/api/sendSMS", (req, res) => {
+  const { name, email, message } = req.body;
+
+  twilioClient.messages
+    .create({
+      body: `${name} with email ID ${email} want to sa that - ${message}`,
+      from: "+12184963628",
+      to: "+919872480059",
+    })
+    .then((message) => {
+      console.log('LOG: Message sent successfully 🤳');
+      res.status(200).send({success: message})
+    })
+    .catch((error) => {
+      console.log("Error occurred in sending SMS: ", error);
+      res.status(500).send({error: error})
+    });
+});
+
+//starting the Express server
 app.listen(PORT, (error) => {
     if (error) {
         throw error;
