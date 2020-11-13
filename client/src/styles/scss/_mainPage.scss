@@ -235,8 +235,13 @@
         & .tech-rating {
             margin: 5% 0 0 0;
         }
+        .ui.grid {
+            margin-left: 0px;
+            margin-right: 0px;
+        }
         .ui.grid > [class*='two column'].row > .column {
             width: 100% !important;
+            padding: 0px;
 
             div {
                 margin: 0 10px 10px 13px;
